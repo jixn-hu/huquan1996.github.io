@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-loading-bar.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -346,6 +353,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  4,759
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  26
+                </span>
+              
+            </div>
+          
 
           
 
@@ -364,330 +402,16 @@
       
         
           
-            <h1 id="BeautifulSoup库"><a href="#BeautifulSoup库" class="headerlink" title="BeautifulSoup库"></a>BeautifulSoup库</h1><p>基本介绍：BeautifulSoup库是python第三方库，是一个解析库</p>
-<h2 id="1-基本使用"><a href="#1-基本使用" class="headerlink" title="1. 基本使用"></a>1. 基本使用</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup  <span class="comment">#导入BeautifulSoup库 （注意：库名区分大小写）（BeautifulSoup库在bs4中）</span></span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>) <span class="comment">#制成一锅汤</span></span><br><span class="line">print(html) <span class="comment">#打印整个网页</span></span><br><span class="line">print(soup.prettify())  <span class="comment">#格式化、补全代码，并打印出来</span></span><br><span class="line">print(soup.a.string) <span class="comment">#打印 a标签的内容</span></span><br></pre></td></tr></table></figure>
-<pre><code>&lt;body link=&quot;#1024ee&quot; class=&quot;abv-115-control&quot;&gt;
-&lt;div id=&quot;header&quot; &gt;
-                &lt;a  title=&quot;到360搜索首页&quot; data-i=&quot;home&quot;&gt;360首页&lt;/a&gt;
-                &lt;/div&gt;
-                &lt;div id=&quot;head&quot;&gt;
-                &lt;form name=&quot;f2&quot; class=&quot;form&quot; action=&quot;s&quot; method=&quot;get&quot;&gt;
-    &lt;span id=&quot;suggest-align&quot; &gt;
-        &lt;a href=&quot;javascript:;&quot;  title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-        &lt;input type=&quot;text&quot; id=&quot;keyword&quot; name=&quot;q&quot;  value=&quot;百度&quot;&gt;百度
-        &lt;input type=&quot;hidden&quot; name=&quot;src&quot; class=&quot;src&quot; value=&quot;srp&quot;&gt;
-                &lt;input type=&quot;hidden&quot; name=&quot;fr&quot; value=&quot;se7_newtab_new&quot;&gt;
-                &lt;input type=&quot;hidden&quot; name=&quot;psid&quot; value=&quot;&quot;&gt;
-    &lt;/span&gt;&lt;input type=&quot;submit&quot;  value=&quot;搜索&quot; class=&quot;s_btn&quot;&gt;
-
-&lt;html&gt;
- &lt;body class=&quot;abv-115-control&quot; link=&quot;#1024ee&quot;&gt;
-  &lt;div id=&quot;header&quot;&gt;
-   &lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;
-    360首页
-   &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div id=&quot;head&quot;&gt;
-   &lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-    &lt;span id=&quot;suggest-align&quot;&gt;
-     &lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;
-      清空
-     &lt;/a&gt;
-     &lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;
-     百度
-     &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-     &lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-     &lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-    &lt;/span&gt;
-    &lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-   &lt;/form&gt;
-  &lt;/div&gt;
- &lt;/body&gt;
-&lt;/html&gt;
-360首页
-</code></pre><h2 id="2-标签选择器"><a href="#2-标签选择器" class="headerlink" title="2. 标签选择器"></a>2. 标签选择器</h2><blockquote>
-<p>处理速度快，但是有一定局限性</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup  <span class="comment">#导入BeautifulSoup库 （注意：库名区分大小写）（BeautifulSoup库在bs4中）</span></span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>) <span class="comment">#制成一锅汤</span></span><br><span class="line"><span class="keyword">print</span> (soup.body)  <span class="comment">#打印整个body标签</span></span><br><span class="line">print(type(soup.body))  <span class="comment">#打印body标签的属性</span></span><br><span class="line">print(soup.div)  <span class="comment">#打印整个div标签</span></span><br><span class="line">print(soup.span)  <span class="comment">#打印整个span标签</span></span><br></pre></td></tr></table></figure>
-<pre><code>&lt;body class=&quot;abv-115-control&quot; link=&quot;#1024ee&quot;&gt;
-&lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;head&quot;&gt;
-&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;&lt;/div&gt;&lt;/body&gt;
-&lt;class &apos;bs4.element.Tag&apos;&gt;
-&lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;
-</code></pre><h3 id="2-1-获取标签名称"><a href="#2-1-获取标签名称" class="headerlink" title="2.1. 获取标签名称"></a>2.1. 获取标签名称</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup  <span class="comment">#导入BeautifulSoup库 （注意：库名区分大小写）（BeautifulSoup库在bs4中）</span></span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>) <span class="comment">#制成一锅汤</span></span><br><span class="line">print(soup.div.name)  <span class="comment">#获取body标签的名称</span></span><br></pre></td></tr></table></figure>
-<pre><code>div
-</code></pre><h3 id="2-2-获取标签属性"><a href="#2-2-获取标签属性" class="headerlink" title="2.2. 获取标签属性"></a>2.2. 获取标签属性</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup  <span class="comment">#导入BeautifulSoup库 （注意：库名区分大小写）（BeautifulSoup库在bs4中）</span></span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>) <span class="comment">#制成一锅汤</span></span><br><span class="line">print(soup.a[<span class="string">'title'</span>])  <span class="comment">#打印 属性名称为title 的标签 的内容</span></span><br><span class="line">print(soup.a.attrs[<span class="string">'title'</span>])  <span class="comment">#打印 属性名称为title 的标签 的内容</span></span><br></pre></td></tr></table></figure>
-<pre><code>到360搜索首页
-到360搜索首页
-</code></pre><h3 id="2-3-获取标签的内容"><a href="#2-3-获取标签的内容" class="headerlink" title="2.3. 获取标签的内容"></a>2.3. 获取标签的内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)  <span class="comment">#制成一锅汤</span></span><br><span class="line">print(soup.a.string)  <span class="comment">#打印a标签的内容</span></span><br></pre></td></tr></table></figure>
-<pre><code>360首页
-</code></pre><h3 id="2-4-标签的嵌套选择"><a href="#2-4-标签的嵌套选择" class="headerlink" title="2.4. 标签的嵌套选择"></a>2.4. 标签的嵌套选择</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">print(soup.span.a.string)  <span class="comment">#打印body标签内的a标签的内容</span></span><br></pre></td></tr></table></figure>
-<pre><code>清空
-</code></pre><h3 id="2-5-子节点和子孙节点"><a href="#2-5-子节点和子孙节点" class="headerlink" title="2.5. 子节点和子孙节点"></a>2.5. 子节点和子孙节点</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">print(soup.prettify())</span><br><span class="line">print(soup.body.contents)  <span class="comment">#打印body标签的所以自子节点</span></span><br><span class="line">print(soup.body.children) </span><br><span class="line"><span class="keyword">for</span> i,child <span class="keyword">in</span> enumerate(soup.body.children):  <span class="comment">#遍历body标签的所以子节点，并逐个打印</span></span><br><span class="line">    print(i,child)</span><br><span class="line">print(soup.body.descendants)</span><br><span class="line"><span class="keyword">for</span> i,child <span class="keyword">in</span> enumerate(soup.body.descendants):   <span class="comment">#遍历body标签的所以子节点，并逐个打印</span></span><br><span class="line">    print(i,child)</span><br></pre></td></tr></table></figure>
-<pre><code>&lt;html&gt;
- &lt;body class=&quot;abv-115-control&quot; link=&quot;#1024ee&quot;&gt;
-  &lt;div id=&quot;header&quot;&gt;
-   &lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;
-    360首页
-   &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div id=&quot;head&quot;&gt;
-   &lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-    &lt;span id=&quot;suggest-align&quot;&gt;
-     &lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;
-      清空
-     &lt;/a&gt;
-     &lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;
-     百度
-     &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-     &lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-     &lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-    &lt;/span&gt;
-    &lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-   &lt;/form&gt;
-  &lt;/div&gt;
- &lt;/body&gt;
-&lt;/html&gt;
-[&apos;\n&apos;, &lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;, &apos;\n&apos;, &lt;div id=&quot;head&quot;&gt;
-&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;&lt;/div&gt;]
-&lt;list_iterator object at 0x00000000056F0710&gt;
-0 
-
-1 &lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;
-2 
-
-3 &lt;div id=&quot;head&quot;&gt;
-&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;&lt;/div&gt;
-&lt;generator object descendants at 0x0000000004CA5BA0&gt;
-0 
-
-1 &lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;
-2 
-
-3 &lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-4 360首页
-5 
-
-6 
-
-7 &lt;div id=&quot;head&quot;&gt;
-&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;&lt;/div&gt;
-8 
-
-9 &lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;
-10 
-
-11 &lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;
-12 
-
-13 &lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-14 清空
-15 
-
-16 &lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;
-17 百度
-
-18 &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-19 
-
-20 &lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-21 
-
-22 &lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-23 
-
-24 &lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-25 
-</code></pre><h3 id="2-6-父节点和祖先节点"><a href="#2-6-父节点和祖先节点" class="headerlink" title="2.6.父节点和祖先节点"></a>2.6.父节点和祖先节点</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">print(soup.a.parent)  <span class="comment">#打印所以父节点</span></span><br><span class="line">print(soup.a.parents)  </span><br><span class="line">print(list(enumerate(soup.a.parents)))  <span class="comment">#打印所以祖先节点</span></span><br></pre></td></tr></table></figure>
-<pre><code>&lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;
-&lt;generator object parents at 0x000000000549ED58&gt;
-[(0, &lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;), (1, &lt;body class=&quot;abv-115-control&quot; link=&quot;#1024ee&quot;&gt;
-&lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;head&quot;&gt;
-&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;&lt;/div&gt;&lt;/body&gt;), (2, &lt;html&gt;&lt;body class=&quot;abv-115-control&quot; link=&quot;#1024ee&quot;&gt;
-&lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;head&quot;&gt;
-&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;), (3, &lt;html&gt;&lt;body class=&quot;abv-115-control&quot; link=&quot;#1024ee&quot;&gt;
-&lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;
-&lt;div id=&quot;head&quot;&gt;
-&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;)]
-</code></pre><h3 id="2-7-标签的兄弟节点"><a href="#2-7-标签的兄弟节点" class="headerlink" title="2.7. 标签的兄弟节点"></a>2.7. 标签的兄弟节点</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">print(list(enumerate(soup.a.previous_siblings)))  <span class="comment">#前面的兄弟节点</span></span><br><span class="line">print(list(enumerate(soup.a.next_siblings)))  <span class="comment">#后面的兄弟节点</span></span><br></pre></td></tr></table></figure>
-<pre><code>[(0, &apos;\n&apos;)]
-[(0, &apos;\n&apos;)]
-</code></pre><h2 id="3-标准选择器"><a href="#3-标准选择器" class="headerlink" title="3. 标准选择器"></a>3. 标准选择器</h2><h3 id="3-1-find-name-attrs-recursive-text-kwargs"><a href="#3-1-find-name-attrs-recursive-text-kwargs" class="headerlink" title="3.1. find(name,attrs,recursive,text,kwargs)"></a>3.1. find(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找第一个满足条件的标签
-</code></pre><h3 id="3-2-find-all-name-attrs-recursive-text-kwargs"><a href="#3-2-find-all-name-attrs-recursive-text-kwargs" class="headerlink" title="3.2. find_all(name,attrs,recursive,text,kwargs)"></a>3.2. find_all(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找满足条件的所有标签
-</code></pre><h3 id="3-3-find-parent-name-attrs-recursive-text-kwargs"><a href="#3-3-find-parent-name-attrs-recursive-text-kwargs" class="headerlink" title="3.3. find_parent(name,attrs,recursive,text,kwargs)"></a>3.3. find_parent(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找所有满足条件的父节点
-</code></pre><h3 id="3-4-find-parents-name-attrs-recursive-text-kwargs"><a href="#3-4-find-parents-name-attrs-recursive-text-kwargs" class="headerlink" title="3.4. find_parents(name,attrs,recursive,text,kwargs)"></a>3.4. find_parents(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找所有满足条件的祖先节点
-</code></pre><h3 id="3-5-find-previous-sibling-name-attrs-recursive-text-kwargs"><a href="#3-5-find-previous-sibling-name-attrs-recursive-text-kwargs" class="headerlink" title="3.5. find_previous_sibling(name,attrs,recursive,text,kwargs)"></a>3.5. find_previous_sibling(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找满足条件的前面一个兄弟节点
-</code></pre><h3 id="3-6-find-previous-siblings-name-attrs-recursive-text-kwargs"><a href="#3-6-find-previous-siblings-name-attrs-recursive-text-kwargs" class="headerlink" title="3.6. find_previous_siblings(name,attrs,recursive,text,kwargs)"></a>3.6. find_previous_siblings(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找满足条件的前面所有兄弟节点
-</code></pre><h3 id="3-7-find-next-sibling-name-attrs-recursive-text-kwargs"><a href="#3-7-find-next-sibling-name-attrs-recursive-text-kwargs" class="headerlink" title="3.7. find_next_sibling(name,attrs,recursive,text,kwargs)"></a>3.7. find_next_sibling(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找满足条件的后面一个兄弟节点
-</code></pre><h3 id="3-8-find-next-siblings-name-attrs-recursive-text-kwargs"><a href="#3-8-find-next-siblings-name-attrs-recursive-text-kwargs" class="headerlink" title="3.8. find_next_siblings(name,attrs,recursive,text,kwargs)"></a>3.8. find_next_siblings(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找满足条件的后面所有兄弟节点
-</code></pre><h3 id="3-9-find-all-next-name-attrs-recursive-text-kwargs"><a href="#3-9-find-all-next-name-attrs-recursive-text-kwargs" class="headerlink" title="3.9. find_all_next(name,attrs,recursive,text,kwargs)"></a>3.9. find_all_next(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找满足条件的后面所有节点
-</code></pre><h3 id="3-10-find-next-name-attrs-recursive-text-kwargs"><a href="#3-10-find-next-name-attrs-recursive-text-kwargs" class="headerlink" title="3.10. find_next(name,attrs,recursive,text,kwargs)"></a>3.10. find_next(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找满足条件的后面一个节点
-</code></pre><h3 id="3-11-find-all-previous-name-attrs-recursive-text-kwargs"><a href="#3-11-find-all-previous-name-attrs-recursive-text-kwargs" class="headerlink" title="3.11. find_all_previous(name,attrs,recursive,text,kwargs)"></a>3.11. find_all_previous(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找满足条件的前面所有节点
-</code></pre><h3 id="3-12-find-previous-name-attrs-recursive-text-kwargs"><a href="#3-12-find-previous-name-attrs-recursive-text-kwargs" class="headerlink" title="3.12. find_previous(name,attrs,recursive,text,kwargs)"></a>3.12. find_previous(name,attrs,recursive,text,kwargs)</h3><pre><code>可以根据标签名，属性，内容在HTML中查找满足条件的前面一个节
-</code></pre><p><strong>12个find的用法相同，以其中的find_all为例进行讲解</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">print(soup.find_all(<span class="string">'input'</span>))   <span class="comment">#查找所有input标签并输出</span></span><br><span class="line">print(type(soup.find_all(<span class="string">'input'</span>)[<span class="number">0</span>]))   <span class="comment">#打印input标签的类型</span></span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;, &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;, &lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;, &lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;, &lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;]
-&lt;class &apos;bs4.element.Tag&apos;&gt;
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">print(soup.find_all(<span class="string">'span'</span>))  <span class="comment">#查找所有input标签并输出</span></span><br><span class="line"><span class="keyword">for</span> span <span class="keyword">in</span> soup.find_all(<span class="string">'span'</span>):   <span class="comment">#遍历span标签</span></span><br><span class="line">    print(span.find_all(<span class="string">'input'</span>))    <span class="comment">#分别在每一个span标签中查找input标签并打印</span></span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;]
-[&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;, &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;, &lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;, &lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">print(soup.find_all(attrs = &#123;<span class="string">'id'</span>:<span class="string">'head'</span>&#125;))  <span class="comment">#查找所有id=“head”的标签</span></span><br><span class="line">print(soup.find_all(attrs = &#123;<span class="string">'name'</span>:<span class="string">'f2'</span>&#125;))  <span class="comment">#查找所有name='f2'的标签</span></span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;div id=&quot;head&quot;&gt;
-&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;&lt;/div&gt;]
-[&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">    &lt;span id="suggest-align" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;ba清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">                &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">print(soup.find_all(id=<span class="string">'head'</span>))  <span class="comment">#查找所有id=“head”的标签</span></span><br><span class="line">print(soup.find_all(class_=<span class="string">'form'</span>))  <span class="comment">#查找所有class=“form”的标签</span></span><br><span class="line"><span class="comment">#（注意：由于这里的class与python的class有冲突，用class_加以区分）</span></span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;div id=&quot;head&quot;&gt;
-&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;ba清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;&lt;/div&gt;]
-[&lt;form action=&quot;s&quot; class=&quot;form&quot; method=&quot;get&quot; name=&quot;f2&quot;&gt;
-&lt;span id=&quot;suggest-align&quot;&gt;
-&lt;a href=&quot;javascript:;&quot; title=&quot;清空&quot;&gt;ba清空&lt;/a&gt;
-&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;百度
-        &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;
-&lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;
-&lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;
-&lt;/span&gt;&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;
-&lt;/form&gt;]
-</code></pre><h2 id="4-CSS选择器"><a href="#4-CSS选择器" class="headerlink" title="4. CSS选择器"></a>4. CSS选择器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">html = <span class="string">'''</span></span><br><span class="line"><span class="string">&lt;body link="#1024ee" class="abv-115-control"&gt;</span></span><br><span class="line"><span class="string">&lt;div id="header" &gt;</span></span><br><span class="line"><span class="string">                &lt;a  title="到360搜索首页" data-i="home"&gt;360首页&lt;/a&gt;</span></span><br><span class="line"><span class="string">                &lt;/div&gt;</span></span><br><span class="line"><span class="string">                &lt;div id="head"&gt;</span></span><br><span class="line"><span class="string">                &lt;form name="f2" class="form" action="s" method="get"&gt;</span></span><br><span class="line"><span class="string">        &lt;span id="suggest" &gt;</span></span><br><span class="line"><span class="string">        &lt;a href="javascript:;"  title="清空"&gt;ba清空&lt;/a&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="text" id="keyword" name="q"  value="百度"&gt;百度</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="src" class="src" value="srp"&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="fr" value="se7_newtab_new"&gt;</span></span><br><span class="line"><span class="string">        &lt;input type="hidden" name="psid" value=""&gt;</span></span><br><span class="line"><span class="string">    &lt;/span&gt;&lt;input type="submit"  value="搜索" class="s_btn"&gt;</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">soup = BeautifulSoup(html,<span class="string">'lxml'</span>)</span><br><span class="line">print(soup.select(<span class="string">'#header'</span>))  <span class="comment">#查找所有id='header'的标签</span></span><br><span class="line">print(soup.select(<span class="string">'.s_btn'</span>))   <span class="comment">#查找所有class=s_btn的标签</span></span><br><span class="line">print(soup.select(<span class="string">' input'</span>))  <span class="comment">#查找所有input的标签</span></span><br><span class="line">print(soup.select(<span class="string">'input.src'</span>)) <span class="comment">#查找 标签名称为input且class='src'的标签</span></span><br><span class="line">print(soup.select(<span class="string">'#head input'</span>))  <span class="comment">#在id='head'的标签中查找input标签</span></span><br><span class="line"><span class="keyword">for</span> input_ <span class="keyword">in</span> soup.select(<span class="string">'#head'</span>):  <span class="comment">#遍历标签</span></span><br><span class="line">    print(input_.select(<span class="string">'.src'</span>))  <span class="comment">#再在每个标签中查找class=src的标签</span></span><br></pre></td></tr></table></figure>
-<pre><code>[&lt;div id=&quot;header&quot;&gt;
-&lt;a data-i=&quot;home&quot; title=&quot;到360搜索首页&quot;&gt;360首页&lt;/a&gt;
-&lt;/div&gt;]
-[&lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;]
-[&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;, &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;, &lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;, &lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;, &lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;]
-[&lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;]
-[&lt;input id=&quot;keyword&quot; name=&quot;q&quot; type=&quot;text&quot; value=&quot;百度&quot;/&gt;, &lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;, &lt;input name=&quot;fr&quot; type=&quot;hidden&quot; value=&quot;se7_newtab_new&quot;/&gt;, &lt;input name=&quot;psid&quot; type=&quot;hidden&quot; value=&quot;&quot;/&gt;, &lt;input class=&quot;s_btn&quot; type=&quot;submit&quot; value=&quot;搜索&quot;/&gt;]
-[&lt;input class=&quot;src&quot; name=&quot;src&quot; type=&quot;hidden&quot; value=&quot;srp&quot;/&gt;]
-</code></pre>
-          
+          BeautifulSoup库基本介绍：BeautifulSoup库是python第三方库，是一个解析库
+1. 基本使用1234567891011121314151617181920from bs4 import BeautifulSoup  #导入BeautifulSoup库 （注意：库名区分大小写
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/30/BeautifulSoup库详解/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -787,6 +511,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  602
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
 
           
 
@@ -805,109 +560,15 @@
       
         
           
-            <p><strong>今天在学python爬虫的时候遇到一个项目，需要爬取斗图网的大量图片并存储到数据库中去，刚开始看视频教程的时候，看老师就安装了一个pymysql（这只是一个python的第三方库），以为这样就可以存储数据了，但在实际操作的时候，还远远不够，存储数据你得先有一个数据库软件，看了看电脑上没有啊，怎么办？网上下载安装一个呗，好，开始准备安装了：</strong></p>
-<hr>
-<p><strong>想要成功使用mysql也没那么容易，请耐心往下看：<br>过程主要分两大步：</strong></p>
-<ul>
-<li>下载</li>
-<li>安装 </li>
-</ul>
-<hr>
-<h2 id="第一步：先说mysql的下载，已经下载过的可以跳过这一步："><a href="#第一步：先说mysql的下载，已经下载过的可以跳过这一步：" class="headerlink" title="第一步：先说mysql的下载，已经下载过的可以跳过这一步："></a>第一步：先说mysql的下载，已经下载过的可以跳过这一步：</h2><blockquote>
-<ol>
-<li>先打开Google搜索mysql，点击【<a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">MySQL : MySQL Downloads</a>】进入下载页面</li>
-</ol>
-<p>   <img src="/2018/06/21/Mysql的安装教程/1.png" alt="图"></p>
-<ol start="2">
-<li>点击【<a href="https://dev.mysql.com/downloads/" target="_blank" rel="noopener">Community (GPL) Downloads »</a>】（注：社区版下载）</li>
-</ol>
-<p><img src="/2018/06/21/Mysql的安装教程/2.png" alt="图"></p>
-<ol start="3">
-<li>点击【<a href="https://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">MySQL Community Server</a>】（注：这个是mysql社区版服务器）</li>
-</ol>
-<p><img src="/2018/06/21/Mysql的安装教程/3.png" alt="图"></p>
-<ol start="4">
-<li>你可以选择你想要的版本，我下的是5.5版本（这里要注意的是5.6之后的版本官网上都取消了msi的安装，只通过zip压缩包解压后，不需要安装，但需要进行配置，比较麻烦，不建议新手安装5.6之后的版本）</li>
-</ol>
-<p><img src="/2018/06/21/Mysql的安装教程/4.png" alt="图"></p>
-<ol start="5">
-<li>在蓝框的位置你可以选择你的操作系统，我的电脑系统是windows7 64位，所以选择【Windows (x86, 64-bit), MSI Installer】一栏，点击【<a href="https://dev.mysql.com/downloads/file/?id=477166" target="_blank" rel="noopener">Download</a>】下载 </li>
-</ol>
-<p><img src="/2018/06/21/Mysql的安装教程/5.png" alt="图"></p>
-<ol start="6">
-<li>点击【<a href="https://dev.mysql.com/get/Downloads/MySQL-5.5/mysql-5.5.60-winx64.msi" target="_blank" rel="noopener">No thanks, just start my download.</a>】下载</li>
-</ol>
-<p><img src="/2018/06/21/Mysql的安装教程/6.png" alt="图"></p>
-<p>7</p>
-</blockquote>
-<ul>
-<li>. 下载完成之后是一个msi文件，直接打开安装<blockquote>
-<p><img src="/2018/06/21/Mysql的安装教程/7.png" alt="图"></p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h2 id="第二步：是mysql的安装："><a href="#第二步：是mysql的安装：" class="headerlink" title="第二步：是mysql的安装："></a>第二步：是mysql的安装：</h2><blockquote>
-</blockquote>
-<ul>
-<li><ol>
-<li>选择安装类型 <blockquote>
-<p>Typical：典型安装<br>Custom：自定义安装<br>Complete：完全安装<br>选择第二种，自定义安装</p>
-<p> <img src="http://paxd6g86d.bkt.clouddn.com/bk/mysqlAnZhuang/2017050811411940.png" alt="图片"></p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><ol start="2">
-<li>选择安装路径<blockquote>
-<p><img src="http://paxd6g86d.bkt.clouddn.com/bk/mysqlAnZhuang/2017050811411941.png" alt="图片"></p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>选择数据存放路径<blockquote>
-<p> <img src="http://paxd6g86d.bkt.clouddn.com/bk/mysqlAnZhuang/2017050811412342.png" alt="图片"></p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><ol start="4">
-<li>选择默认字符集 <blockquote>
-<p>第一个是Latin1，西方欧洲国家的语言<br>第二种是UTF8，支持中文<br>第三种可以自定义选择<br>为了防止出现数据乱码，最好选择UTF8格式</p>
-<p> <img src="http://paxd6g86d.bkt.clouddn.com/bk/mysqlAnZhuang/2017050811412343.png" alt="图片"></p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><ol start="5">
-<li>设置环境变量 <blockquote>
-<p>在cmd里面可以直接输入mysql 就可以运行mysql，否则必须先到myql安装bin目录</p>
-<p> <img src="http://paxd6g86d.bkt.clouddn.com/bk/mysqlAnZhuang/2017050811412344.png" alt="图"></p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><ol start="6">
-<li>设置数据库密码 <blockquote>
-<p>用户名默认为root</p>
-<p> <img src="http://paxd6g86d.bkt.clouddn.com/bk/mysqlAnZhuang/2017050811412345.png" alt=""></p>
-</blockquote>
-</li>
-</ol>
-</li>
-<li><ol start="7">
-<li>验证mysql是否安装成功；打开cmd，输入mysql -uroot -p<blockquote>
-<p>出现以下提示表示成功</p>
-<p> <img src="http://paxd6g86d.bkt.clouddn.com/bk/mysqlAnZhuang/2017050811412447.png" alt="图"></p>
-</blockquote>
-</li>
-</ol>
-</li>
-</ul>
-<p><strong>到此为止，mysql的安装到此结束。</strong></p>
-
-          
+          今天在学python爬虫的时候遇到一个项目，需要爬取斗图网的大量图片并存储到数据库中去，刚开始看视频教程的时候，看老师就安装了一个pymysql（这只是一个python的第三方库），以为这样就可以存储数据了，但在实际操作的时候，还远远不够，存储数据你得先有一个数据库软件，看了看电脑上没有啊，怎么办？
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/21/Mysql的安装教程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1007,6 +668,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  838
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1025,87 +717,18 @@
       
         
           
-            <h3 id="最近帮别人恢复U盘里的数据，弄了好久，分享下数据的恢复心得："><a href="#最近帮别人恢复U盘里的数据，弄了好久，分享下数据的恢复心得：" class="headerlink" title="最近帮别人恢复U盘里的数据，弄了好久，分享下数据的恢复心得："></a>最近帮别人恢复U盘里的数据，弄了好久，分享下数据的恢复心得：</h3><p>###当你的数据丢失的了怎么办，你需要数据恢复，数据恢复需要什么，数据恢复软件，一款好的数据恢复软件让你事半功倍，下面分别推荐两款不错的免费的和收费的数据恢复软件： ###</p>
-<h2 id="免费恢复软件："><a href="#免费恢复软件：" class="headerlink" title="免费恢复软件："></a>免费恢复软件：</h2><h3 id="得力数据恢复软件"><a href="#得力数据恢复软件" class="headerlink" title="-得力数据恢复软件"></a>-<a href="http://www.delihuifu.com/" target="_blank" rel="noopener">得力数据恢复软件</a></h3><hr>
-<blockquote>
-<p>运行环境：Winxp、Win7、Win8、Win10等</p>
-</blockquote>
-<blockquote>
-<p>最新版本：6.2.3.0</p>
-</blockquote>
-<blockquote>
-<p>语言： 中文</p>
-</blockquote>
-<blockquote>
-<p>软件简介：得力数据恢复软件可以有效解决各种硬件、软件或人为误操作引起的文件、数据丢失问题！支持电脑、硬盘、U盘、内存卡等多种设备；FAT16、FAT32、NTFS、EXFAT等多种文件系统；急速扫描，智能分析；快速数据恢复与深度数据恢复相结合。</p>
-</blockquote>
-<p> <img src="/2018/06/15/数据恢复工具/得力.png" alt=""></p>
-<h3 id="易我数据恢复向导"><a href="#易我数据恢复向导" class="headerlink" title="- 易我数据恢复向导"></a>- <a href="http://www.easeus.com.cn/drw/" target="_blank" rel="noopener">易我数据恢复向导</a></h3><hr>
-<blockquote>
-<p>运行环境：Winxp、Win7、Win8、Win10等</p>
-</blockquote>
-<blockquote>
-<p>最新版本：12.0.0</p>
-</blockquote>
-<blockquote>
-<p>语言： 中文</p>
-</blockquote>
-<blockquote>
-<p>软件简介：这款免费软件不会对您的磁盘写入任何数据，如果没有扫描到您的文件，也不用担心磁盘会受到影响。</p>
-</blockquote>
-<blockquote>
-<p>如果Windows 无法识别您的 SD卡，U盘等外置存储设备时，或者磁盘插入电脑时提示“请先格式化”，请不要格式化磁盘，因为易我数据恢复向导是可以扫描到这些设备并进行数据恢复的。</p>
-</blockquote>
-<blockquote>
-<p>现在针对中国大陆市场免费推出官方正式中文版。</p>
-</blockquote>
-<p><img src="/2018/06/15/数据恢复工具/易我.png" alt=""></p>
-<h2 id="收费恢复软件："><a href="#收费恢复软件：" class="headerlink" title="收费恢复软件："></a>收费恢复软件：</h2><h3 id="顶尖数据恢复"><a href="#顶尖数据恢复" class="headerlink" title="- 顶尖数据恢复"></a>- <a href="http://xiazai.zol.com.cn/detail/34/335513.shtml" target="_blank" rel="noopener">顶尖数据恢复</a></h3><hr>
-<blockquote>
-<p>运行环境：Winxp、Win7、Win8、Win10等</p>
-</blockquote>
-<blockquote>
-<p>语言： 中文</p>
-</blockquote>
-<blockquote>
-<p>软件简介：顶尖数据恢复软件拥有以下功能:</p>
-</blockquote>
-<blockquote>
-<ol>
-<li>恢复删除文件或者目录 </li>
-<li>恢复格式化的盘 </li>
-<li>恢复重新分区过的数据 </li>
-<li>恢复分区丢失的数据 </li>
-<li>恢复无法打开的分区 </li>
-<li>恢复误Ghost分区对分区 </li>
-<li>恢复误Ghost分区对硬盘造成分区丢失 </li>
-<li>Ghost光盘自动快速分成4个分区 </li>
-<li>恢复重装系统后桌面或者我的文档里面的数据 </li>
-<li>磁盘镜像文件中恢复数据 </li>
-<li>注册本软件 </li>
-<li>导出数据进行恢复 </li>
-</ol>
-</blockquote>
-<p><img src="/2018/06/15/数据恢复工具/顶尖.png" alt=""></p>
-<h3 id="强力数据恢复"><a href="#强力数据恢复" class="headerlink" title="- 强力数据恢复"></a>- <a href="https://www.qianglihuifu.com/" target="_blank" rel="noopener">强力数据恢复</a></h3><hr>
-<blockquote>
-<p>运行环境：Winxp、Win7、Win8、Win10、安卓、苹果等</p>
-</blockquote>
-<blockquote>
-<p>语言： 中文</p>
-</blockquote>
-<blockquote>
-<p>软件简介：强力数据恢复软件是一款高效易用、功能强大的专业数据恢复软件。主要可用于恢复被删除的文件、误格式化文件以及误Ghost丢失的文件等，其数据恢复成功率高达99%，有效找回用户丢失数据。</p>
-</blockquote>
-<blockquote>
-<p>强力苹果恢复精灵是互盾科技旗下自。主研发的苹果设备数据恢复软件。凭借多年技术和研发经验，软件具备强大的反删除能力和安全可靠的恢复技术，累计帮助数十万iPhone用户找回丢失的数据。</p>
-</blockquote>
-<blockquote>
-<p>强力安卓恢复精灵是一款专门针对安卓设备研发的数据恢复软件，可用于恢复安卓手机上的联系人、短信、微信聊天记录、照片、文档等资料，一键扫描并恢复丢失数据，轻松找回安卓设备数据。</p>
-</blockquote>
-<p><img src="/2018/06/15/数据恢复工具/强力.png" alt=""></p>
+          最近帮别人恢复U盘里的数据，弄了好久，分享下数据的恢复心得：###当你的数据丢失的了怎么办，你需要数据恢复，数据恢复需要什么，数据恢复软件，一款好的数据恢复软件让你事半功倍，下面分别推荐两款不错的免费的和收费的数据恢复软件： ###
+免费恢复软件：-得力数据恢复软件
 
-          
+运行环境：Winxp、Win7
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/15/数据恢复工具/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1205,6 +828,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  148
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
 
           
 
@@ -1222,25 +876,14 @@
 
       
         
-          
-            <p><strong>早上在逛知乎的时候看到一些用github搭建个人博客的教程，绝得自己可以试一下，就花了几个小时的时间，按照教程搭建了自己的个人博客，以下是用到的教程：</strong></p>
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/25729240" target="_blank" rel="noopener">教你免费搭建个人博客，Hexo&amp;Github | 小歪的博客</a></li>
-<li><a href="https://www.cnblogs.com/wumz/p/8030244.html" target="_blank" rel="noopener">使用Node.js+Hexo+Github搭建个人博客 - 梦飞扬~ - 博客园</a></li>
-</ul>
-<p><strong>以下是用的工具：</strong></p>
-<ul>
-<li>hexo</li>
-<li>github网站（<a href="https://github.com/github）" target="_blank" rel="noopener">https://github.com/github）</a></li>
-<li>git</li>
-<li>cmd</li>
-<li>Markdown（写文章的时候用到）</li>
-</ul>
-<blockquote>
-<p><strong>博客刚刚搭建，很多都还没有完善，请静等之后的完善……</strong></p>
-</blockquote>
-
-          
+          <p><strong>早上在逛知乎的时候看到一些用github搭建个人博客的教程，绝得自己可以试一下，就花了几个小时的时间，按照教程搭建了自己的个人博客，以下是用到的教程：</strong></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/14/我的第一篇文章/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1416,7 +1059,7 @@
   
 </div>
 
-
+<!--
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
@@ -1426,7 +1069,7 @@
 
 
   <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
-
+-->
 
 
 
@@ -1496,9 +1139,6 @@
 
 
 
-  
-  
-
 
 
 
@@ -1540,16 +1180,6 @@
   
   
     <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three.min.js"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
   
 
 
