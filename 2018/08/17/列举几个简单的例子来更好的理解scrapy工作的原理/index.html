@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="linux,网络," />
+  <meta name="keywords" content="python,爬虫,scrapy框架," />
 
 
 
@@ -86,23 +86,20 @@
 
 
 
-<meta name="description" content="最近想着自己学习一下Linux的基本操作：  是作为一名程序员，以后在工作的时候遇到Linux操作环境的可能性很大，有必要掌握一些基本知识； 是在Linux下，用命令行shell来操作，感觉很有逼格，嘿嘿嘿。  在网上找了一些视频，准备来学习一下，可是实际操作的时候，好几次遇到Linux网络连接失败的问题，为了避免每次都要上网去查，特地小小总结记录一下，以此来祭奠一下我那可耻的记忆力 好了，废话不">
-<meta name="keywords" content="linux,网络">
+<meta name="description" content="说明：了解爬虫的可能都会知道，在爬虫里，requests入门简单，即使是没有基础的小白，学个几天也能简单的去请求网站，但是scrapy就相对来说就比较难，本片文章能是列举几个简单的例子去理解的scrapy工作的原理，理解了scrapy工作的原理之后，学起来就会简单很多 适用：本篇文章适合有一点的爬虫基础但又是刚刚接触或者想要学习scrapy的同学 scrapy框架： scrapy是Python开发">
+<meta name="keywords" content="python,爬虫,scrapy框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VMware虚拟机下，linux操作系统网络连接问题">
-<meta property="og:url" content="http://yoursite.com/2018/07/19/linu网络连接问题/index.html">
+<meta property="og:title" content="列举几个简单的例子来更好的理解scrapy框架工作的原理">
+<meta property="og:url" content="http://yoursite.com/2018/08/17/列举几个简单的例子来更好的理解scrapy工作的原理/index.html">
 <meta property="og:site_name" content="吉祥鸟的博客">
-<meta property="og:description" content="最近想着自己学习一下Linux的基本操作：  是作为一名程序员，以后在工作的时候遇到Linux操作环境的可能性很大，有必要掌握一些基本知识； 是在Linux下，用命令行shell来操作，感觉很有逼格，嘿嘿嘿。  在网上找了一些视频，准备来学习一下，可是实际操作的时候，好几次遇到Linux网络连接失败的问题，为了避免每次都要上网去查，特地小小总结记录一下，以此来祭奠一下我那可耻的记忆力 好了，废话不">
+<meta property="og:description" content="说明：了解爬虫的可能都会知道，在爬虫里，requests入门简单，即使是没有基础的小白，学个几天也能简单的去请求网站，但是scrapy就相对来说就比较难，本片文章能是列举几个简单的例子去理解的scrapy工作的原理，理解了scrapy工作的原理之后，学起来就会简单很多 适用：本篇文章适合有一点的爬虫基础但又是刚刚接触或者想要学习scrapy的同学 scrapy框架： scrapy是Python开发">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/linux/linux%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%981.png">
-<meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/linux/linux%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%982.png">
-<meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/linux/linux%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%983.png">
-<meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/linux/linux%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%984.png">
-<meta property="og:updated_time" content="2018-07-19T13:27:14.166Z">
+<meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/scrapy/scrapy%E7%BB%93%E6%9E%84%E5%9B%BE.png">
+<meta property="og:updated_time" content="2018-08-17T13:52:04.633Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VMware虚拟机下，linux操作系统网络连接问题">
-<meta name="twitter:description" content="最近想着自己学习一下Linux的基本操作：  是作为一名程序员，以后在工作的时候遇到Linux操作环境的可能性很大，有必要掌握一些基本知识； 是在Linux下，用命令行shell来操作，感觉很有逼格，嘿嘿嘿。  在网上找了一些视频，准备来学习一下，可是实际操作的时候，好几次遇到Linux网络连接失败的问题，为了避免每次都要上网去查，特地小小总结记录一下，以此来祭奠一下我那可耻的记忆力 好了，废话不">
-<meta name="twitter:image" content="http://paxd6g86d.bkt.clouddn.com/bk/linux/linux%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%981.png">
+<meta name="twitter:title" content="列举几个简单的例子来更好的理解scrapy框架工作的原理">
+<meta name="twitter:description" content="说明：了解爬虫的可能都会知道，在爬虫里，requests入门简单，即使是没有基础的小白，学个几天也能简单的去请求网站，但是scrapy就相对来说就比较难，本片文章能是列举几个简单的例子去理解的scrapy工作的原理，理解了scrapy工作的原理之后，学起来就会简单很多 适用：本篇文章适合有一点的爬虫基础但又是刚刚接触或者想要学习scrapy的同学 scrapy框架： scrapy是Python开发">
+<meta name="twitter:image" content="http://paxd6g86d.bkt.clouddn.com/bk/scrapy/scrapy%E7%BB%93%E6%9E%84%E5%9B%BE.png">
 
 
 
@@ -132,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/19/linu网络连接问题/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/17/列举几个简单的例子来更好的理解scrapy工作的原理/"/>
 
 
 
 
 
-  <title>VMware虚拟机下，linux操作系统网络连接问题 | 吉祥鸟的博客</title>
+  <title>列举几个简单的例子来更好的理解scrapy框架工作的原理 | 吉祥鸟的博客</title>
   
 
 
@@ -265,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/19/linu网络连接问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/17/列举几个简单的例子来更好的理解scrapy工作的原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吉祥鸟">
@@ -282,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VMware虚拟机下，linux操作系统网络连接问题</h1>
+          <h1 class="post-title" itemprop="name headline">列举几个简单的例子来更好的理解scrapy框架工作的原理</h1>
         
 
         <div class="post-meta">
@@ -294,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-19T20:25:28+08:00">
-                2018-07-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-17T20:58:06+08:00">
+                2018-08-17
               </time>
             
 
@@ -317,8 +314,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
                   </a>
                 </span>
 
@@ -353,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  305
+                  865
                 </span>
               
 
@@ -369,7 +377,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  3
                 </span>
               
             </div>
@@ -390,17 +398,76 @@
       
 
       
-        <p><strong>最近想着自己学习一下Linux的基本操作：</strong></p>
-<ol>
-<li>是作为一名程序员，以后在工作的时候遇到Linux操作环境的可能性很大，有必要掌握一些基本知识；</li>
-<li>是在Linux下，用命令行shell来操作，感觉很有逼格，嘿嘿嘿。</li>
-</ol>
-<p><strong>在网上找了一些视频，准备来学习一下，可是实际操作的时候，好几次遇到Linux网络连接失败的问题，为了避免每次都要上网去查，特地小小总结记录一下，以此来祭奠一下我那可耻的记忆力</strong></p>
-<p><strong>好了，废话不多说，进入正题：</strong></p>
-<h3 id="问题：网络总是显示连接断开，本来之前还好好的，物理电脑的宽带连接也是正常的，就是虚拟机的Linux连不上网："><a href="#问题：网络总是显示连接断开，本来之前还好好的，物理电脑的宽带连接也是正常的，就是虚拟机的Linux连不上网：" class="headerlink" title="问题：网络总是显示连接断开，本来之前还好好的，物理电脑的宽带连接也是正常的，就是虚拟机的Linux连不上网："></a>问题：网络总是显示连接断开，本来之前还好好的，物理电脑的宽带连接也是正常的，就是虚拟机的Linux连不上网：</h3><p><img src="http://paxd6g86d.bkt.clouddn.com/bk/linux/linux%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%981.png" alt="这是一张图"></p>
-<h3 id="下面来说一下怎么是解决这个问题："><a href="#下面来说一下怎么是解决这个问题：" class="headerlink" title="下面来说一下怎么是解决这个问题："></a>下面来说一下怎么是解决这个问题：</h3><h3 id="1-先找到Linux网络适配器的位置，现在显示的是NAT模式，我们要把它改成桥接模式"><a href="#1-先找到Linux网络适配器的位置，现在显示的是NAT模式，我们要把它改成桥接模式" class="headerlink" title="1.先找到Linux网络适配器的位置，现在显示的是NAT模式，我们要把它改成桥接模式"></a>1.先找到Linux网络适配器的位置，现在显示的是NAT模式，我们要把它改成桥接模式</h3><p><img src="http://paxd6g86d.bkt.clouddn.com/bk/linux/linux%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%982.png" alt="这是一张图"></p>
-<h3 id="2-点击打开网络适配器，勾选桥接模式，如下图："><a href="#2-点击打开网络适配器，勾选桥接模式，如下图：" class="headerlink" title="2. 点击打开网络适配器，勾选桥接模式，如下图："></a>2. 点击打开网络适配器，勾选桥接模式，如下图：</h3><p><img src="http://paxd6g86d.bkt.clouddn.com/bk/linux/linux%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%983.png" alt="这是一张图"></p>
-<h3 id="3-点击确认之后，再重新打开Linux操作系统，网络就自动连接上了"><a href="#3-点击确认之后，再重新打开Linux操作系统，网络就自动连接上了" class="headerlink" title="3. 点击确认之后，再重新打开Linux操作系统，网络就自动连接上了"></a>3. 点击确认之后，再重新打开Linux操作系统，网络就自动连接上了</h3><p><img src="http://paxd6g86d.bkt.clouddn.com/bk/linux/linux%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%984.png" alt="这是一张图"></p>
+        <p><strong>说明：了解爬虫的可能都会知道，在爬虫里，requests入门简单，即使是没有基础的小白，学个几天也能简单的去请求网站，但是scrapy就相对来说就比较难，本片文章能是列举几个简单的例子去理解的scrapy工作的原理，理解了scrapy工作的原理之后，学起来就会简单很多</strong></p>
+<p><strong>适用：本篇文章适合有一点的爬虫基础但又是刚刚接触或者想要学习scrapy的同学</strong></p>
+<h2 id="scrapy框架："><a href="#scrapy框架：" class="headerlink" title="scrapy框架："></a>scrapy框架：</h2><blockquote>
+<p>scrapy是Python开发的一个快速、高层次的屏幕抓取和web抓取框架，用于抓取web站点并从页面中提取结构化的数据。Scrapy用途广泛，可以用于数据挖掘、监测和自动化测试。</p>
+</blockquote>
+<h2 id="scrapy框架的结构："><a href="#scrapy框架的结构：" class="headerlink" title="scrapy框架的结构："></a>scrapy框架的结构：</h2><blockquote>
+<p>scrapy是一个5+2结构,见下图</p>
+</blockquote>
+<pre><code>5表示：
+    1. spiders(蜘蛛)
+    2. engine(引擎)
+    3. downloader(下载器)
+    4. scheduler(调度器)
+    5. item pipeline(项目管道)    
+
+2表示：
+    1. downloder middlewares(下载中间件)
+    2. spider middlewares(蜘蛛中间件)
+</code></pre><p><img src="http://paxd6g86d.bkt.clouddn.com/bk/scrapy/scrapy%E7%BB%93%E6%9E%84%E5%9B%BE.png" alt=""></p>
+<hr>
+<h2 id="接下来我们就列举几个列子来方便的理解scrapy原理："><a href="#接下来我们就列举几个列子来方便的理解scrapy原理：" class="headerlink" title="接下来我们就列举几个列子来方便的理解scrapy原理："></a>接下来我们就列举几个列子来方便的理解scrapy原理：</h2><h3 id="先说一下爬虫，对于一个爬虫，整体来看，分为三个部分"><a href="#先说一下爬虫，对于一个爬虫，整体来看，分为三个部分" class="headerlink" title="先说一下爬虫，对于一个爬虫，整体来看，分为三个部分:"></a>先说一下爬虫，对于一个爬虫，整体来看，分为三个部分:</h3><ul>
+<li><p>请求</p>
+<p>  就是请求网站，分为get和post</p>
+</li>
+<li><p>解析</p>
+<p>  就是解析网站返回的response，即对response进行进一步处理</p>
+</li>
+<li><p>存储</p>
+<p>  就是把处理过的信息存储到文件，或者数据库的操作</p>
+</li>
+</ul>
+<p><strong>而scrapy框架也无外乎也是这分三个部分，下面是4个情景设定，都是学习scrapy刚开始会遇到的，在每个设定后面对其工作的原理给出了简单解释，之所以不写太过详细，是为了方便大家理解，让大家在大脑里面对scrapy框架有大致的轮廓：</strong></p>
+<pre><code>设定一：
+        初始url：1个
+        是否解析：否
+        是否存储数据：否
+
+    （1）spider将初始url经过engine传递给scheduler，形成调度队列（1个requests）
+    （2）scheduler将requests经过engine调度给downloader进行数据下载，形成原始数据
+
+设定二：
+        初始url：1个
+        是否解析：是
+        是否存储数据：否
+
+    （1）spider将初始url经过engine传递给scheduler，形成调度队列（1个requests）
+    （2）scheduler将requests经过engine调度给downloader进行数据下载，形成原始数据
+    （3）将原始数据经过engine传递给spider进行解析
+
+设定三：
+        初始url：1个
+        是否解析：是
+        是否存储数据：是
+
+    （1）spider将初始url经过engine传递给scheduler，形成调度队列（多个requests）
+    （2）scheduler将第一个requests经过engine调度给downloader进行数据下载，形成原始数据
+    （3）将原始数据经过engine传递给spider进行解析
+    （4）将解析后的数据经过engine传给item pipeline进行数据存储
+
+设定四：
+        初始url：多个
+        是否解析：是
+        是否存储数据：是
+
+    （1）spider将初始url经过engine传递给scheduler，形成调度队列（多个requests）
+    （2）scheduler将第一个requests经过engine调度给downloader进行数据下载，形成原始数据
+    （3）将原始数据经过engine传递给spider进行解析
+    （4）将解析后的数据经过engine传给item pipeline进行数据存储
+    （5）scheduler将下一个requests经过engine调度给downloader进行数据下载，形成原始数据......#重复(2)到（4）步，直到scheduler中没有更多的requests
+</code></pre><p><strong>本篇文章只是对scrapy框架的的原理进行的简单的讲解，想要精通scrapy框架，还需要进一步的学习……</strong></p>
 
       
     </div>
@@ -418,9 +485,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
-            <a href="/tags/网络/" rel="tag"># 网络</a>
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+            <a href="/tags/scrapy框架/" rel="tag"># scrapy框架</a>
           
         </div>
       
@@ -433,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/15/PyQuery库实例详解/" rel="next" title="PyQuery库实例详解">
-                <i class="fa fa-chevron-left"></i> PyQuery库实例详解
+              <a href="/2018/07/30/windows7下安装tesserocr库遇到的坑/" rel="next" title="windows7下安装tesserocr库遇到的坑">
+                <i class="fa fa-chevron-left"></i> windows7下安装tesserocr库遇到的坑
               </a>
             
           </div>
@@ -442,10 +511,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/23/使用pymongo操作MongoDB/" rel="prev" title="使用pymongo操作MongoDB">
-                使用pymongo操作MongoDB <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -605,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题：网络总是显示连接断开，本来之前还好好的，物理电脑的宽带连接也是正常的，就是虚拟机的Linux连不上网："><span class="nav-number">1.</span> <span class="nav-text">问题：网络总是显示连接断开，本来之前还好好的，物理电脑的宽带连接也是正常的，就是虚拟机的Linux连不上网：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下面来说一下怎么是解决这个问题："><span class="nav-number">2.</span> <span class="nav-text">下面来说一下怎么是解决这个问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-先找到Linux网络适配器的位置，现在显示的是NAT模式，我们要把它改成桥接模式"><span class="nav-number">3.</span> <span class="nav-text">1.先找到Linux网络适配器的位置，现在显示的是NAT模式，我们要把它改成桥接模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-点击打开网络适配器，勾选桥接模式，如下图："><span class="nav-number">4.</span> <span class="nav-text">2. 点击打开网络适配器，勾选桥接模式，如下图：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-点击确认之后，再重新打开Linux操作系统，网络就自动连接上了"><span class="nav-number">5.</span> <span class="nav-text">3. 点击确认之后，再重新打开Linux操作系统，网络就自动连接上了</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#scrapy框架："><span class="nav-number">1.</span> <span class="nav-text">scrapy框架：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scrapy框架的结构："><span class="nav-number">2.</span> <span class="nav-text">scrapy框架的结构：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接下来我们就列举几个列子来方便的理解scrapy原理："><span class="nav-number">3.</span> <span class="nav-text">接下来我们就列举几个列子来方便的理解scrapy原理：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先说一下爬虫，对于一个爬虫，整体来看，分为三个部分"><span class="nav-number">3.1.</span> <span class="nav-text">先说一下爬虫，对于一个爬虫，整体来看，分为三个部分:</span></a></li></ol></li></ol></div>
             
 
           </div>
