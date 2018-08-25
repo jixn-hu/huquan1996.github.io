@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="python,爬虫,学习笔记," />
+  <meta name="keywords" content="python,解决问题,scrapy shell," />
 
 
 
@@ -86,18 +86,20 @@
 
 
 
-<meta name="description" content="面向对象编程定义：把函数进行分类和封装后放入对象中，使得开发更快、更强。 面向对象编程的两大特性： 封装 继承  1. 封装顾名思义就是把内容封装好，在调用封装好的内容。封装分两步：  第一步为封装内容 第二步为调用封装内容  123456789class Person:  #创建类    def __init__(self,name,age): #__init__()方法称为类的构造方法">
-<meta name="keywords" content="python,爬虫,学习笔记">
+<meta name="description" content="我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：出现403，表示网站拒绝提供服务 因为有的网站有反爬机制，当你使用scrapy shell的时候是以是scrapy爬虫的标识进行访问网站的，这时候网站会拒绝为爬虫提供服务，这时候就会返回403错误 下面列举三个方案来解决这个问题，三个方案的原理都是一样的，即修改user-agent的值，使用浏">
+<meta name="keywords" content="python,解决问题,scrapy shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="面向对象编程简单讲解">
-<meta property="og:url" content="http://yoursite.com/2018/07/15/面向对象编程简单讲解/index.html">
+<meta property="og:title" content="scrapy shell出现403错误解决方案">
+<meta property="og:url" content="http://yoursite.com/2018/08/25/shell出现403解决方案/index.html">
 <meta property="og:site_name" content="吉祥鸟的博客">
-<meta property="og:description" content="面向对象编程定义：把函数进行分类和封装后放入对象中，使得开发更快、更强。 面向对象编程的两大特性： 封装 继承  1. 封装顾名思义就是把内容封装好，在调用封装好的内容。封装分两步：  第一步为封装内容 第二步为调用封装内容  123456789class Person:  #创建类    def __init__(self,name,age): #__init__()方法称为类的构造方法">
+<meta property="og:description" content="我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：出现403，表示网站拒绝提供服务 因为有的网站有反爬机制，当你使用scrapy shell的时候是以是scrapy爬虫的标识进行访问网站的，这时候网站会拒绝为爬虫提供服务，这时候就会返回403错误 下面列举三个方案来解决这个问题，三个方案的原理都是一样的，即修改user-agent的值，使用浏">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-17T15:18:38.616Z">
+<meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/scrapy/shell%E5%87%BA%E7%8E%B0403%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png">
+<meta property="og:updated_time" content="2018-08-25T02:19:08.327Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="面向对象编程简单讲解">
-<meta name="twitter:description" content="面向对象编程定义：把函数进行分类和封装后放入对象中，使得开发更快、更强。 面向对象编程的两大特性： 封装 继承  1. 封装顾名思义就是把内容封装好，在调用封装好的内容。封装分两步：  第一步为封装内容 第二步为调用封装内容  123456789class Person:  #创建类    def __init__(self,name,age): #__init__()方法称为类的构造方法">
+<meta name="twitter:title" content="scrapy shell出现403错误解决方案">
+<meta name="twitter:description" content="我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：出现403，表示网站拒绝提供服务 因为有的网站有反爬机制，当你使用scrapy shell的时候是以是scrapy爬虫的标识进行访问网站的，这时候网站会拒绝为爬虫提供服务，这时候就会返回403错误 下面列举三个方案来解决这个问题，三个方案的原理都是一样的，即修改user-agent的值，使用浏">
+<meta name="twitter:image" content="http://paxd6g86d.bkt.clouddn.com/bk/scrapy/shell%E5%87%BA%E7%8E%B0403%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png">
 
 
 
@@ -127,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/15/面向对象编程简单讲解/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/08/25/shell出现403解决方案/"/>
 
 
 
 
 
-  <title>面向对象编程简单讲解 | 吉祥鸟的博客</title>
+  <title>scrapy shell出现403错误解决方案 | 吉祥鸟的博客</title>
   
 
 
@@ -260,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/15/面向对象编程简单讲解/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/shell出现403解决方案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吉祥鸟">
@@ -277,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">面向对象编程简单讲解</h1>
+          <h1 class="post-title" itemprop="name headline">scrapy shell出现403错误解决方案</h1>
         
 
         <div class="post-meta">
@@ -289,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-15T17:30:54+08:00">
-                2018-07-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-25T10:01:32+08:00">
+                2018-08-25
               </time>
             
 
@@ -323,8 +325,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/python基础/" itemprop="url" rel="index">
-                    <span itemprop="name">python基础</span>
+                  <a href="/categories/python/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
                   </a>
                 </span>
 
@@ -359,7 +361,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  420
+                  518
                 </span>
               
 
@@ -396,31 +398,46 @@
       
 
       
-        <h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><p>定义：把函数进行分类和封装后放入对象中，使得开发更快、更强。</p>
-<h3 id="面向对象编程的两大特性："><a href="#面向对象编程的两大特性：" class="headerlink" title="面向对象编程的两大特性："></a>面向对象编程的两大特性：</h3><ul>
-<li><strong>封装</strong></li>
-<li><strong>继承</strong></li>
-</ul>
-<h3 id="1-封装"><a href="#1-封装" class="headerlink" title="1. 封装"></a>1. 封装</h3><p>顾名思义就是把内容封装好，在调用封装好的内容。封装分两步：</p>
-<ul>
-<li>第一步为封装内容</li>
-<li>第二步为调用封装内容</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span>:</span>  <span class="comment">#创建类</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,age)</span>:</span> <span class="comment">#__init__()方法称为类的构造方法</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.age = age</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">detail</span><span class="params">(self)</span>:</span>   <span class="comment">#通过self调用被封装的内容</span></span><br><span class="line">        print(self.name) <span class="comment">#调用属性</span></span><br><span class="line">        print(self.age)  </span><br><span class="line">obj1 = Person(<span class="string">'santos'</span>,<span class="number">18</span>)   <span class="comment">#将santos和18分别封装到obj1（即：self的name和age属性）</span></span><br><span class="line">obj1.detail()  <span class="comment">#python将obj1传给参数self（即：obj1.detail(obj1),此时内部self=obj1）</span></span><br></pre></td></tr></table></figure>
-<pre><code>santos
-18
-</code></pre><h3 id="2-继承"><a href="#2-继承" class="headerlink" title="2. 继承"></a>2. 继承</h3><blockquote>
-<h5 id="继承是以普通的类为基础建立专门的类对象。面向对象编程的继承和现实的继承类似，子类继承父类的某些特质。例如："><a href="#继承是以普通的类为基础建立专门的类对象。面向对象编程的继承和现实的继承类似，子类继承父类的某些特质。例如：" class="headerlink" title="继承是以普通的类为基础建立专门的类对象。面向对象编程的继承和现实的继承类似，子类继承父类的某些特质。例如："></a>继承是以普通的类为基础建立专门的类对象。面向对象编程的继承和现实的继承类似，子类继承父类的某些特质。例如：</h5></blockquote>
-<p>动物：吃喝拉撒</p>
-<p>猫： 喵喵叫，继承动物的功能</p>
-<p>狗： 汪汪叫，继承动物的功能</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">eat</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'%s 吃 '</span> %self.name)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">drink</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'%s 喝 '</span> %self.name)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">shif</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'%s 拉 '</span> %self.name)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pee</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'%s 撒 '</span> %self.name)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span><span class="params">(Animal)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cry</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'喵喵叫'</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span><span class="params">(Animal)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cry</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'汪汪叫'</span>)</span><br><span class="line">c1 = Cat(<span class="string">'小白家的小黑猫'</span>)</span><br><span class="line">c1.eat()</span><br><span class="line">c1.pee()</span><br><span class="line">c1.cry()</span><br><span class="line">d1 = Dog(<span class="string">'胖子家的狗'</span>)</span><br><span class="line">d1.eat()</span><br><span class="line">d1.cry()</span><br></pre></td></tr></table></figure>
-<pre><code>小白家的小黑猫 吃 
-小白家的小黑猫 撒 
-喵喵叫
-胖子家的狗 吃 
-汪汪叫
-</code></pre>
+        <h3 id="我们使用scrapy-shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题："><a href="#我们使用scrapy-shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：" class="headerlink" title="我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题："></a>我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：</h3><p>出现403，表示网站拒绝提供服务</p>
+<p><strong>因为有的网站有反爬机制，当你使用scrapy shell的时候是以是scrapy爬虫的标识进行访问网站的，这时候网站会拒绝为爬虫提供服务，这时候就会返回403错误</strong></p>
+<p><strong>下面列举三个方案来解决这个问题，三个方案的原理都是一样的，即修改user-agent的值，使用浏览器的标识来对网站进行访问，这样网站就不会拒绝服务了</strong></p>
+<hr>
+<h3 id="方案一：只治标"><a href="#方案一：只治标" class="headerlink" title="方案一：只治标."></a>方案一：只治标.</h3><p><strong>在使用scrapy shell的时候，在其后面加上-s USER_AGENT=’Mozills/5.0’</strong></p>
+<p>eg: 我们要对百度进行scrapy shell的时候</p>
+<pre><code>scrapy shell http://www.baidu.com -s USER_AGENT=&apos;Mozills/5.0&apos;
+</code></pre><p><strong>成功！！！</strong></p>
+<hr>
+<h3 id="方案二：半治标半治本"><a href="#方案二：半治标半治本" class="headerlink" title="方案二：半治标半治本."></a>方案二：半治标半治本.</h3><p><strong>修改scrapy项目里的settings.py  USER_AGENT</strong></p>
+<p>把settings.py里的USER_AGENT的属性启用并修改</p>
+<p>修改前：</p>
+<pre><code>#USER_AGENT = &apos;yi (+http://www.yourdomain.com)&apos;
+</code></pre><p>修改后：</p>
+<pre><code>USER_AGENT = &apos;Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0&apos;
+</code></pre><p>再次使用scrapy shell：</p>
+<p>（注意：这里的scrapy shell只能在项目里使用，直接在cmd中使用是不生效的，这也是为什么说半治标的原因）</p>
+<pre><code>scrapy shell https://movie.douban.com/top250
+</code></pre><p>我们看一下返回的信息:</p>
+<pre><code>response   &lt;200 https://movie.douban.com/top250&gt;
+</code></pre><p>返回200，<strong>成功！！！</strong></p>
+<hr>
+<h3 id="方案三：-治本"><a href="#方案三：-治本" class="headerlink" title="方案三： 治本."></a>方案三： 治本.</h3><p><strong>修改整个python的default_settings.py文件里的默认USER_AGENT值</strong></p>
+<blockquote>
+<p>之后在不管是在项目中还是在cmd中使用scrapy shell，都是以浏览器的标识符来进行访问的了 </p>
+</blockquote>
+<p>找一下default_settings.py文件的位置</p>
+<p>我的default_settings.py文件在C:\ProgramData\Anaconda3\Lib\site-packages\scrapy\settings下</p>
+<p><img src="http://paxd6g86d.bkt.clouddn.com/bk/scrapy/shell%E5%87%BA%E7%8E%B0403%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png" alt="图"></p>
+<p>找到文件位置后，打开文件，修改    USER_AGENT的值</p>
+<p>原USER-AGENT的值：</p>
+<pre><code>USER_AGENT = &apos;Scrapy/%s (+http://scrapy.org)&apos; % import_module(&apos;scrapy&apos;).__version__
+</code></pre><p>改为</p>
+<pre><code>USER_AGENT = &apos;Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0&apos;  
+</code></pre><p>再进行scrapy shell：</p>
+<pre><code>scrapy shell https://movie.douban.com/top250
+</code></pre><p>看一下返回的信息：</p>
+<pre><code>response   &lt;200 https://movie.douban.com/top250&gt;
+</code></pre><p>返回200，<strong>成功！！！</strong></p>
+
       
     </div>
     
@@ -447,9 +464,9 @@
           
             <a href="/tags/python/" rel="tag"># python</a>
           
-            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+            <a href="/tags/解决问题/" rel="tag"># 解决问题</a>
           
-            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
+            <a href="/tags/scrapy-shell/" rel="tag"># scrapy shell</a>
           
         </div>
       
@@ -462,8 +479,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/15/python基本练习/" rel="next" title="python基本练习">
-                <i class="fa fa-chevron-left"></i> python基本练习
+              <a href="/2018/08/17/列举几个简单的例子来更好的理解scrapy工作的原理/" rel="next" title="列举几个简单的例子来更好的理解scrapy框架工作的原理">
+                <i class="fa fa-chevron-left"></i> 列举几个简单的例子来更好的理解scrapy框架工作的原理
               </a>
             
           </div>
@@ -471,10 +488,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/15/PyQuery库实例详解/" rel="prev" title="PyQuery库实例详解">
-                PyQuery库实例详解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -634,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#面向对象编程"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#面向对象编程的两大特性："><span class="nav-number">1.0.1.</span> <span class="nav-text">面向对象编程的两大特性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-封装"><span class="nav-number">1.0.2.</span> <span class="nav-text">1. 封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-继承"><span class="nav-number">1.0.3.</span> <span class="nav-text">2. 继承</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#继承是以普通的类为基础建立专门的类对象。面向对象编程的继承和现实的继承类似，子类继承父类的某些特质。例如："><span class="nav-number">1.0.3.0.1.</span> <span class="nav-text">继承是以普通的类为基础建立专门的类对象。面向对象编程的继承和现实的继承类似，子类继承父类的某些特质。例如：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#我们使用scrapy-shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题："><span class="nav-number">1.</span> <span class="nav-text">我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案一：只治标"><span class="nav-number">2.</span> <span class="nav-text">方案一：只治标.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案二：半治标半治本"><span class="nav-number">3.</span> <span class="nav-text">方案二：半治标半治本.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案三：-治本"><span class="nav-number">4.</span> <span class="nav-text">方案三： 治本.</span></a></li></ol></div>
             
 
           </div>
