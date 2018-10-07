@@ -75,10 +75,12 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="爬虫,项目," />
 
 
 
+
+  
 
 
   <link rel="alternate" href="https://huquan1996.github.io.xml" title="吉祥鸟的博客" type="application/atom+xml" />
@@ -88,17 +90,21 @@
 
 
 
-<meta name="description" content="早上在逛知乎的时候看到一些用github搭建个人博客的教程，绝得自己可以试一下，就花了几个小时的时间，按照教程搭建了自己的个人博客，以下是用到的教程：">
+<meta name="description" content="任务要求： 爬取实习僧网站的招聘公司信息和职位信息，并存储到数据库中，对应的数据库表和需要爬取的字段见下面表一和表二（注意：爬取存在的字段） 看一下爬下来的结果图：公司信息：  职业信息：  1. 检查是否有api无 2. 确定数据分析和数据存储 确定构建的表和连接关系  表一：dt_company  ID: id 采集对象编号：doid 所属站点：site 公司名称：company_name 注">
+<meta name="keywords" content="爬虫,项目">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇文章">
-<meta property="og:url" content="http://yoursite.com/2018/06/14/我的第一篇文章/index.html">
+<meta property="og:title" content="使用requests爬取实习僧网站数据">
+<meta property="og:url" content="http://yoursite.com/2018/10/01/使用requests爬取实习僧网站数据/index.html">
 <meta property="og:site_name" content="吉祥鸟的博客">
-<meta property="og:description" content="早上在逛知乎的时候看到一些用github搭建个人博客的教程，绝得自己可以试一下，就花了几个小时的时间，按照教程搭建了自己的个人博客，以下是用到的教程：">
+<meta property="og:description" content="任务要求： 爬取实习僧网站的招聘公司信息和职位信息，并存储到数据库中，对应的数据库表和需要爬取的字段见下面表一和表二（注意：爬取存在的字段） 看一下爬下来的结果图：公司信息：  职业信息：  1. 检查是否有api无 2. 确定数据分析和数据存储 确定构建的表和连接关系  表一：dt_company  ID: id 采集对象编号：doid 所属站点：site 公司名称：company_name 注">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-05T00:20:43.882Z">
+<meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/2018-09-19_180559.png">
+<meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/2018-09-19_180711.png">
+<meta property="og:updated_time" content="2018-10-07T10:54:04.771Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇文章">
-<meta name="twitter:description" content="早上在逛知乎的时候看到一些用github搭建个人博客的教程，绝得自己可以试一下，就花了几个小时的时间，按照教程搭建了自己的个人博客，以下是用到的教程：">
+<meta name="twitter:title" content="使用requests爬取实习僧网站数据">
+<meta name="twitter:description" content="任务要求： 爬取实习僧网站的招聘公司信息和职位信息，并存储到数据库中，对应的数据库表和需要爬取的字段见下面表一和表二（注意：爬取存在的字段） 看一下爬下来的结果图：公司信息：  职业信息：  1. 检查是否有api无 2. 确定数据分析和数据存储 确定构建的表和连接关系  表一：dt_company  ID: id 采集对象编号：doid 所属站点：site 公司名称：company_name 注">
+<meta name="twitter:image" content="http://paxd6g86d.bkt.clouddn.com/bk/2018-09-19_180559.png">
 
 
 
@@ -128,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/14/我的第一篇文章/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/01/使用requests爬取实习僧网站数据/"/>
 
 
 
 
 
-  <title>我的第一篇文章 | 吉祥鸟的博客</title>
+  <title>使用requests爬取实习僧网站数据 | 吉祥鸟的博客</title>
   
 
 
@@ -261,7 +267,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/14/我的第一篇文章/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/01/使用requests爬取实习僧网站数据/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="吉祥鸟">
@@ -278,7 +284,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">我的第一篇文章</h1>
+          <h1 class="post-title" itemprop="name headline">使用requests爬取实习僧网站数据</h1>
         
 
         <div class="post-meta">
@@ -290,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T12:32:43+08:00">
-                2018-06-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-01T18:48:19+08:00">
+                2018-10-01
               </time>
             
 
@@ -327,7 +333,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  148
+                  926
                 </span>
               
 
@@ -343,7 +349,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -364,24 +370,150 @@
       
 
       
-        <p><strong>早上在逛知乎的时候看到一些用github搭建个人博客的教程，绝得自己可以试一下，就花了几个小时的时间，按照教程搭建了自己的个人博客，以下是用到的教程：</strong></p>
-<a id="more"></a>
-<ul>
-<li><a href="https://zhuanlan.zhihu.com/p/25729240" target="_blank" rel="noopener">教你免费搭建个人博客，Hexo&amp;Github | 小歪的博客</a></li>
-<li><a href="https://www.cnblogs.com/wumz/p/8030244.html" target="_blank" rel="noopener">使用Node.js+Hexo+Github搭建个人博客 - 梦飞扬~ - 博客园</a></li>
+        <p><strong>任务要求：</strong></p>
+<p>爬取实习僧网站的招聘公司信息和职位信息，并存储到数据库中，对应的数据库表和需要爬取的字段见下面表一和表二（注意：爬取存在的字段）</p>
+<h3 id="看一下爬下来的结果图："><a href="#看一下爬下来的结果图：" class="headerlink" title="看一下爬下来的结果图："></a>看一下爬下来的结果图：</h3><p><strong>公司信息：</strong></p>
+<p><img src="http://paxd6g86d.bkt.clouddn.com/bk/2018-09-19_180559.png" alt="image"></p>
+<p><strong>职业信息：</strong></p>
+<p><img src="http://paxd6g86d.bkt.clouddn.com/bk/2018-09-19_180711.png" alt="image"></p>
+<h2 id="1-检查是否有api"><a href="#1-检查是否有api" class="headerlink" title="1. 检查是否有api"></a>1. 检查是否有api</h2><p>无</p>
+<h2 id="2-确定数据分析和数据存储"><a href="#2-确定数据分析和数据存储" class="headerlink" title="2. 确定数据分析和数据存储"></a>2. 确定数据分析和数据存储</h2><ul>
+<li><strong>确定构建的表和连接关系</strong></li>
 </ul>
-<p><strong>以下是用的工具：</strong></p>
-<ul>
-<li>hexo</li>
-<li>github网站（<a href="https://github.com/github）" target="_blank" rel="noopener">https://github.com/github）</a></li>
-<li>git</li>
-<li>cmd</li>
-<li>Markdown（写文章的时候用到）</li>
-</ul>
-<blockquote>
-<p><strong>博客刚刚搭建，很多都还没有完善，请静等之后的完善……</strong></p>
-</blockquote>
+<pre><code>表一：dt_company
 
+ID: id
+采集对象编号：doid
+所属站点：site
+公司名称：company_name
+注册时间：company_regtime
+成立时间：company_uptime
+公司性质：company_kind
+所属行业：company_industry
+注册资金：company_capital
+员工人数：company_workers
+所在地：company_area
+邮政编码：company_postcode
+公司联系人：company_ecname
+公司电话：company_phone
+手机号码：company_mobile
+公司传真：company_fax
+公司地址：company_address
+公司网址：company_website
+电子邮箱：company_email
+公司描述：company_detail
+最后更新时间：company_updatetime
+企业状态：status
+采集源url：url
+采集时间:addtime
+更新时间:updatetime
+对应乐职网etid:etid
+对应乐职网企业名称:etname
+类别:type
+
+
+表二：dt_jobs_2
+
+site  varchar(16) NOT NULL站点
+doid  varchar(56) NOT NULL采集对像编号
+company_name  varchar(256) NOT NULL企业名称
+job_name  varchar(256) NOT NULL职位名称
+job_updatetime  int(11) NOT NULL更新时间
+job_starttime  int(11) NOT NULL发布日期
+job_endtime  int(11) NOT NULL结止日期
+company_industry  varchar(56) NOT NULL所在行业
+job_type  varchar(128) NOT NULL职位类别
+company_kind  varchar(56) NOT NULL企业类型
+job_area  varchar(128) NOT NULL工作地点
+job_mode  varchar(56) NOT NULL工作类型
+job_year  varchar(56) NOT NULL工作年限
+job_money  varchar(56) NOT NULL工资
+job_degree  varchar(56) NOT NULL学历
+job_sex  varchar(56) NOT NULL性别
+job_age1  varchar(56) NOT NULL要求年龄
+job_age2  varchar(56) NOT NULL
+job_lang  varchar(56) NOT NULL外语要求
+job_major  varchar(56) NOT NULL专业要求
+job_rest  varchar(56) NOT NULL是否双休
+job_welfare  varchar(56) NOT NULL五险一金
+job_mail  varchar(56) NOT NULL邮箱地址
+job_detailed  text NOT NULL工作详细
+job_demand text NOT NULL工作要求
+job_num varchar(56) NOT NULL招聘人数
+job_department  varchar(56) NOT NULL所属部门
+addtime int(11) NOT NULL采集时间
+updatetime int(11) NOT NULL更新时间
+url varchar(128) NOT NULL采集源url
+statustiny int(1) NOT NULL职位状态 -9周伯通职位暂不处理
+etid  int(11) NOT NULL对应乐职网etid
+etjobid  int(11) NOT NULL对应乐职网职位ID
+etjobname  varchar(128) NOT NULL对应乐职网职位名称
+job_report  varchar(56) NOT NULL汇报对象
+job_reportnums  varchar(32) NOT NULL下属人数
+job_coreskills  varchar(256) NOT NULL技能关键字
+isheadhuntertiny  int(4) NOT NULL是否猎头职位：1是，0否
+</code></pre><ul>
+<li><strong>选择需要连接的数据库</strong></li>
+</ul>
+<p>mysql</p>
+<h2 id="3-数据流分析"><a href="#3-数据流分析" class="headerlink" title="3. 数据流分析"></a>3. 数据流分析</h2><ul>
+<li><strong>确定爬取的范围</strong></li>
+</ul>
+<p>部分页</p>
+<ul>
+<li><strong>切入源头</strong></li>
+</ul>
+<p><a href="https://www.shixiseng.com/interns?k=&amp;t=zj&amp;p=1" target="_blank" rel="noopener">https://www.shixiseng.com/interns?k=&amp;t=zj&amp;p=1</a></p>
+<ul>
+<li><strong>多层网络结构间跳转流程</strong></li>
+</ul>
+<p>更改参数p进行爬取</p>
+<ul>
+<li><strong>范围细分</strong></li>
+</ul>
+<p>无</p>
+<h2 id="4-数据采集"><a href="#4-数据采集" class="headerlink" title="4. 数据采集"></a>4. 数据采集</h2><ul>
+<li><strong>请求模块</strong></li>
+</ul>
+<p>requests</p>
+<ul>
+<li><strong>解析工具</strong></li>
+</ul>
+<p>xpath</p>
+<ul>
+<li><strong>数据存储</strong></li>
+</ul>
+<p>mysql</p>
+<ul>
+<li><strong>爬虫效率提升问题</strong></li>
+</ul>
+<p>使用多协程</p>
+<h2 id="5-反反爬虫"><a href="#5-反反爬虫" class="headerlink" title="5. 反反爬虫"></a>5. 反反爬虫</h2><p>会有请求失败的问题：<br>    通过添加请求头解决</p>
+<h2 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h2><pre><code>1. 在爬取的字符串数据中值需要一部分：
+    使用split将字符串进行切割
+2. 判断爬取的数据是否是你需要的：
+    使用if判断a字符串是否在b中
+3. 爬取停止：
+    sys.exit(&apos;tingzhi&apos;)
+
+4.crontab定时任务：
+    - 先vim /var/spool/cron/root  （打开这个文件）
+    - 添加任务：
+        每天的第一个小时的第一个分钟执行
+        1 1*** python /root/lezhi/爬取实习僧/spider_shixiseng.py
+    - esc 之后 ：wq保存退出
+
+**部署问题：**
+    screen -x 20156  （打开后台状态为 Attached 且名称为 django 的 screen shell）
+
+    vim 编译器
+        ：  （冒号进入编译模式）
+            q 退出
+            w 保存
+            i 编辑
+
+    screen -X -S 4588 quit  (杀死一个已经detached的screen会话  )
+</code></pre>
       
     </div>
     
@@ -404,6 +536,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+            <a href="/tags/项目/" rel="tag"># 项目</a>
+          
+        </div>
+      
 
       
       
@@ -413,15 +553,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/09/11/记录一下自己找“python爬虫工程师实习生”岗位的经历/" rel="next" title="记录一下自己找“python爬虫工程师实习生”岗位的经历">
+                <i class="fa fa-chevron-left"></i> 记录一下自己找“python爬虫工程师实习生”岗位的经历
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/15/数据恢复工具/" rel="prev" title="推荐几款数据恢复工具">
-                推荐几款数据恢复工具 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -473,8 +613,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -569,6 +718,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#看一下爬下来的结果图："><span class="nav-number">1.</span> <span class="nav-text">看一下爬下来的结果图：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-检查是否有api"><span class="nav-number"></span> <span class="nav-text">1. 检查是否有api</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-确定数据分析和数据存储"><span class="nav-number"></span> <span class="nav-text">2. 确定数据分析和数据存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-数据流分析"><span class="nav-number"></span> <span class="nav-text">3. 数据流分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-数据采集"><span class="nav-number"></span> <span class="nav-text">4. 数据采集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-反反爬虫"><span class="nav-number"></span> <span class="nav-text">5. 反反爬虫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遇到的问题："><span class="nav-number"></span> <span class="nav-text">遇到的问题：</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
