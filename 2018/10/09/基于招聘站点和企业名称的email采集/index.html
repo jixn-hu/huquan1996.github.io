@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/2018-09-26_173418.png">
 <meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/2018-09-26_173832.png">
 <meta property="og:image" content="http://pgbxm1xvg.bkt.clouddn.com/pexels-photo-1483936.jpeg">
-<meta property="og:updated_time" content="2018-10-09T11:41:47.147Z">
+<meta property="og:updated_time" content="2018-10-09T11:55:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于招聘站点和企业名称的email采集">
 <meta name="twitter:description" content="实习期间，公司安排了一个简单的任务，下面是任务要求： 任务要求：基于招聘站点和企业名称的 email采集 1. 获取一批要采集email的企业 2. 使用百度，在各大招聘站点内部搜索要采集的企业的招聘页面。 3. 从招聘页面提取出企业的email（需要排除招聘站点官方、猎头相关的email）。 4. 将采集的结果保存到数据库 代码已经上传到github上：基于招聘站点和企业名称的 email采集">
@@ -336,7 +336,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,177
+                  1,156
                 </span>
               
 
@@ -530,9 +530,6 @@
     PRIMARY KEY (`id`),`et_email`
     KEY (`etid`)
 ) ENGINE=INNODB DEFAULT CHARSET=gbk ROW_FORMAT=DYNAMIC COMMENT=&apos;公司email&apos;
-
-replace into et_email(etid,email) values(&apos;100224953&apos;,&apos;emma.chn@unilever.com&apos;)
-replace into et_email(etid,email) values(&apos;2817270&apos;,&apos;u81f3hr_sytate@163.com&apos;)
 </code></pre><p><strong>多协程的问题：</strong></p>
 <pre><code>gevent.pool不能进行多参数的传递，可以使用from functools import partial来进行多参数的传递
 使用方法：  
@@ -593,6 +590,10 @@ map函数是需要是以迭代的方式来对b进行数据的提取，以后以�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/11/测试/" rel="prev" title="测试">
+                测试 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -673,7 +674,7 @@ map函数是需要是以迭代的方式来对b进行数据的提取，以后以�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
