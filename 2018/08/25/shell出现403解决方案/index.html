@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-loading-bar.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python,解决问题,scrapy shell," />
+
+
+
+
+
+  <link rel="alternate" href="https://huquan1996.github.io.xml" title="吉祥鸟的博客" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：出现403，表示网站拒绝提供服务 因为有的网站有反爬机制，当你使用scrapy shell的时候是以是scrapy爬虫的标识进行访问网站的，这时候网站会拒绝为爬虫提供服务，这时候就会返回403错误 下面列举三个方案来解决这个问题，三个方案的原理都是一样的，即修改user-agent的值，使用浏">
+<meta name="keywords" content="python,解决问题,scrapy shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="scrapy shell出现403错误解决方案">
+<meta property="og:url" content="http://yoursite.com/2018/08/25/shell出现403解决方案/index.html">
+<meta property="og:site_name" content="吉祥鸟的博客">
+<meta property="og:description" content="我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：出现403，表示网站拒绝提供服务 因为有的网站有反爬机制，当你使用scrapy shell的时候是以是scrapy爬虫的标识进行访问网站的，这时候网站会拒绝为爬虫提供服务，这时候就会返回403错误 下面列举三个方案来解决这个问题，三个方案的原理都是一样的，即修改user-agent的值，使用浏">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://paxd6g86d.bkt.clouddn.com/bk/scrapy/shell%E5%87%BA%E7%8E%B0403%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png">
+<meta property="og:updated_time" content="2018-08-25T02:19:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="scrapy shell出现403错误解决方案">
+<meta name="twitter:description" content="我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：出现403，表示网站拒绝提供服务 因为有的网站有反爬机制，当你使用scrapy shell的时候是以是scrapy爬虫的标识进行访问网站的，这时候网站会拒绝为爬虫提供服务，这时候就会返回403错误 下面列举三个方案来解决这个问题，三个方案的原理都是一样的，即修改user-agent的值，使用浏">
+<meta name="twitter:image" content="http://paxd6g86d.bkt.clouddn.com/bk/scrapy/shell%E5%87%BA%E7%8E%B0403%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/25/shell出现403解决方案/"/>
+
+
+
+
+
+  <title>scrapy shell出现403错误解决方案 | 吉祥鸟的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/huquan1996" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">吉祥鸟的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/25/shell出现403解决方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="吉祥鸟">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/wd.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="吉祥鸟的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">scrapy shell出现403错误解决方案</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-25T10:01:32+08:00">
+                2018-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/爬虫/" itemprop="url" rel="index">
+                    <span itemprop="name">爬虫</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读数 <i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  518
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="我们使用scrapy-shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题："><a href="#我们使用scrapy-shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：" class="headerlink" title="我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题："></a>我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：</h3><p>出现403，表示网站拒绝提供服务</p>
+<p><strong>因为有的网站有反爬机制，当你使用scrapy shell的时候是以是scrapy爬虫的标识进行访问网站的，这时候网站会拒绝为爬虫提供服务，这时候就会返回403错误</strong></p>
+<p><strong>下面列举三个方案来解决这个问题，三个方案的原理都是一样的，即修改user-agent的值，使用浏览器的标识来对网站进行访问，这样网站就不会拒绝服务了</strong></p>
+<hr>
+<h3 id="方案一：只治标"><a href="#方案一：只治标" class="headerlink" title="方案一：只治标."></a>方案一：只治标.</h3><p><strong>在使用scrapy shell的时候，在其后面加上-s USER_AGENT=’Mozills/5.0’</strong></p>
+<p>eg: 我们要对百度进行scrapy shell的时候</p>
+<pre><code>scrapy shell http://www.baidu.com -s USER_AGENT=&apos;Mozills/5.0&apos;
+</code></pre><p><strong>成功！！！</strong></p>
+<hr>
+<h3 id="方案二：半治标半治本"><a href="#方案二：半治标半治本" class="headerlink" title="方案二：半治标半治本."></a>方案二：半治标半治本.</h3><p><strong>修改scrapy项目里的settings.py  USER_AGENT</strong></p>
+<p>把settings.py里的USER_AGENT的属性启用并修改</p>
+<p>修改前：</p>
+<pre><code>#USER_AGENT = &apos;yi (+http://www.yourdomain.com)&apos;
+</code></pre><p>修改后：</p>
+<pre><code>USER_AGENT = &apos;Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0&apos;
+</code></pre><p>再次使用scrapy shell：</p>
+<p>（注意：这里的scrapy shell只能在项目里使用，直接在cmd中使用是不生效的，这也是为什么说半治标的原因）</p>
+<pre><code>scrapy shell https://movie.douban.com/top250
+</code></pre><p>我们看一下返回的信息:</p>
+<pre><code>response   &lt;200 https://movie.douban.com/top250&gt;
+</code></pre><p>返回200，<strong>成功！！！</strong></p>
+<hr>
+<h3 id="方案三：-治本"><a href="#方案三：-治本" class="headerlink" title="方案三： 治本."></a>方案三： 治本.</h3><p><strong>修改整个python的default_settings.py文件里的默认USER_AGENT值</strong></p>
+<blockquote>
+<p>之后在不管是在项目中还是在cmd中使用scrapy shell，都是以浏览器的标识符来进行访问的了 </p>
+</blockquote>
+<p>找一下default_settings.py文件的位置</p>
+<p>我的default_settings.py文件在C:\ProgramData\Anaconda3\Lib\site-packages\scrapy\settings下</p>
+<p><img src="http://paxd6g86d.bkt.clouddn.com/bk/scrapy/shell%E5%87%BA%E7%8E%B0403%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88.png" alt="图"></p>
+<p>找到文件位置后，打开文件，修改    USER_AGENT的值</p>
+<p>原USER-AGENT的值：</p>
+<pre><code>USER_AGENT = &apos;Scrapy/%s (+http://scrapy.org)&apos; % import_module(&apos;scrapy&apos;).__version__
+</code></pre><p>改为</p>
+<pre><code>USER_AGENT = &apos;Mozilla/5.0 (Windows NT 5.1; rv:5.0) Gecko/20100101 Firefox/5.0&apos;  
+</code></pre><p>再进行scrapy shell：</p>
+<pre><code>scrapy shell https://movie.douban.com/top250
+</code></pre><p>看一下返回的信息：</p>
+<pre><code>response   &lt;200 https://movie.douban.com/top250&gt;
+</code></pre><p>返回200，<strong>成功！！！</strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="https://hqx.oss-cn-beijing.aliyuncs.com/image/%E6%89%AB%E7%A0%81_%E6%90%9C%E7%B4%A2%E8%81%94%E5%90%88%E4%BC%A0%E6%92%AD%E6%A0%B7%E5%BC%8F-%E5%BE%AE%E4%BF%A1%E6%A0%87%E5%87%86%E7%BB%BF%E7%89%88.png?x-oss-process=style/jixn" alt="吉祥鸟 wechat" style="width: 200px; max-width: 100%;"/>
+    <div>扫一扫关注我哦</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/解决问题/" rel="tag"># 解决问题</a>
+          
+            <a href="/tags/scrapy-shell/" rel="tag"># scrapy shell</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/17/列举几个简单的例子来更好的理解scrapy工作的原理/" rel="next" title="列举几个简单的例子来更好的理解scrapy框架工作的原理">
+                <i class="fa fa-chevron-left"></i> 列举几个简单的例子来更好的理解scrapy框架工作的原理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/01/python简单爬虫项目：爬取360摄影图片及其信息/" rel="prev" title="python简单爬虫项目：使用scrapy框架爬取360摄影图片及其信息">
+                python简单爬虫项目：使用scrapy框架爬取360摄影图片及其信息 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/wd.gif"
+                alt="吉祥鸟" />
+            
+              <p class="site-author-name" itemprop="name">吉祥鸟</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="https://huquan1996.github.io.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/huquan1996" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://baidu.com/" title="百度一下" target="_blank">百度一下</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#我们使用scrapy-shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题："><span class="nav-number">1.</span> <span class="nav-text">我们使用scrapy shell来进行调试是很方便的，但是有时会出现403错误的问题，我们来解决这个问题：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案一：只治标"><span class="nav-number">2.</span> <span class="nav-text">方案一：只治标.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案二：半治标半治本"><span class="nav-number">3.</span> <span class="nav-text">方案二：半治标半治本.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案三：-治本"><span class="nav-number">4.</span> <span class="nav-text">方案三： 治本.</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">吉祥鸟</span>
+
+  
+</div>
+
+<!--
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+-->
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      本站访问数 <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      本站总访问量 <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
