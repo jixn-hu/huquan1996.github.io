@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>吉祥鸟的博客</title>
+    <link>http://yoursite.com/</link>
+    <atom:link href="/https://huquan1996.github.io.xml" rel="self" type="application/rss+xml"/>
+    
+    <description></description>
+    <pubDate>Sun, 16 Dec 2018 10:59:44 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>从coding上git代码，并修改后push上去的步骤</title>
+      <link>http://yoursite.com/2018/12/16/%E4%BB%8Ecoding%E4%B8%8Agit%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%90%8Epush%E4%B8%8A%E5%8E%BB%E7%9A%84%E6%AD%A5%E9%AA%A4/</link>
+      <guid>http://yoursite.com/2018/12/16/%E4%BB%8Ecoding%E4%B8%8Agit%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%90%8Epush%E4%B8%8A%E5%8E%BB%E7%9A%84%E6%AD%A5%E9%AA%A4/</guid>
+      <pubDate>Sun, 16 Dec 2018 10:57:55 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;http://hqx.oss-cn-beijing.aliyuncs.com/image/literary1.jpg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;git代码下来的步骤：&quot;&gt;&lt;a href=&quot;#git代码下来的步骤：&quot; class=
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p><img src="http://hqx.oss-cn-beijing.aliyuncs.com/image/literary1.jpg" alt="image"></p><h3 id="git代码下来的步骤："><a href="#git代码下来的步骤：" class="headerlink" title="git代码下来的步骤："></a>git代码下来的步骤：</h3><p><strong>1. 进入pycharm</strong></p><p><strong>2. 点击VCS</strong></p><p><strong>3. 点击checkout from version control</strong></p><p><strong>4. 点击git</strong></p><p><strong>5. 输入url</strong><br><img src="https://hqx.oss-cn-beijing.aliyuncs.com/image/git_coding1.jpg" alt="image"></p><p>(附：URL获取方式：<br>进入coding，打开项目，点击复制<br><img src="https://hqx.oss-cn-beijing.aliyuncs.com/image/git_coding.jpg" alt="image"><br>)</p><p><strong>6. 点击clone</strong></p><p><strong>7. 输入coding的账号和密码</strong></p><p><strong>注：如果你已经添加了自己的个人公钥，第五步获取的url可以更改为SSH的url，这样就可以不用输入密码，更加方便</strong></p><p><strong>到此，代码就git下来了</strong></p><p><strong>附：添加公钥的方法：</strong></p><ol><li>打开git bash</li><li>输入 ssh-keygen -t rsa -C “<a href="mailto:your_email@example.com" target="_blank" rel="noopener">your_email@example.com</a>“<br>(注：<a href="mailto:your_email@example.com" target="_blank" rel="noopener">your_email@example.com</a>是你的邮箱)  之后会跳出不少信息，全部按enter就可以</li><li>找到你的id_rsa.pub文件，打开复制里面的全部内容</li><li>进入coding，打开个人设置，点击ssh公钥选项</li></ol><p><img src="https://hqx.oss-cn-beijing.aliyuncs.com/image/git_coding2.jpg" alt="image"></p><ol start="5"><li>点击新增公钥,将之前复制的内容全部粘贴到公钥内容里，公钥名称会自己生成，也可以自己修改，点击添加</li></ol><ol start="6"><li>再次进入git bash，进行命令行测试，首次建立链接会要求信任主机。输入命令 ssh -T <a href="mailto:git@e.coding.net" target="_blank" rel="noopener">git@e.coding.net</a></li></ol><p><strong>至此，公钥就添加完成了</strong></p><h3 id="push上去的步骤"><a href="#push上去的步骤" class="headerlink" title="push上去的步骤"></a>push上去的步骤</h3><p><strong>这个就很简单了</strong></p><p><strong>在pycharm修改完代码后直接点击commit，写上修改日志，在点击commit and push就完成了push的步骤</strong></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2018/12/16/%E4%BB%8Ecoding%E4%B8%8Agit%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%90%8Epush%E4%B8%8A%E5%8E%BB%E7%9A%84%E6%AD%A5%E9%AA%A4/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>这是一个爬虫—爬取天眼查网站的企业信息</title>
+      <link>http://yoursite.com/2018/12/16/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E7%88%AC%E8%99%AB%E2%80%94%E7%88%AC%E5%8F%96%E5%A4%A9%E7%9C%BC%E6%9F%A5%E7%BD%91%E7%AB%99%E7%9A%84%E4%BC%81%E4%B8%9A%E4%BF%A1%E6%81%AF/</link>
+      <guid>http://yoursite.com/2018/12/16/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E7%88%AC%E8%99%AB%E2%80%94%E7%88%AC%E5%8F%96%E5%A4%A9%E7%9C%BC%E6%9F%A5%E7%BD%91%E7%AB%99%E7%9A%84%E4%BC%81%E4%B8%9A%E4%BF%A1%E6%81%AF/</guid>
+      <pubDate>Sun, 16 Dec 2018 03:25:11 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;h2 id=&quot;爬虫简介&quot;&gt;&lt;a href=&quot;#爬虫简介&quot; class=&quot;headerlink&quot; title=&quot;爬虫简介&quot;&gt;&lt;/a&gt;爬虫简介&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://hqx.oss-cn-beijing.aliyuncs.com/image/pexels
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<h2 id="爬虫简介"><a href="#爬虫简介" class="headerlink" title="爬虫简介"></a>爬虫简介</h2><p><img src="https://hqx.oss-cn-beijing.aliyuncs.com/image/pexels-photo-205316.png?x-oss-process=style/jixn" alt="image"><br><strong>这是一个在未登录的情况下，根据企业名称搜索，爬取企业页面数据的采集程序</strong></p><p><strong>注意:</strong> 这是一个比较简单的爬虫，基本上只用到了代理，没有用到其他的反反爬技术，不过由于爬取的数据比较多，<strong>适合刷解析技能的熟练度</strong>，所以高手勿进</p><p><strong>代码已经上传到<a href="https://github.com/huquan1996/PythonSpider/tree/master/Item4%EF%BC%9Aspider_tianyancha" target="_blank" rel="noopener">GitHub</a>上，有用还请给个星</strong></p><p><strong>python版本</strong>：python2.7</p><p><strong>编码工具</strong>：pycharm</p><p><strong>数据存储</strong>：mysql</p><p><strong>爬虫结构</strong>：广度爬虫</p><h3 id="爬虫思路："><a href="#爬虫思路：" class="headerlink" title="爬虫思路："></a>爬虫思路：</h3><p><img src="https://hqx.oss-cn-beijing.aliyuncs.com/image/pexels-photo-373076.jpeg?x-oss-process=style/jixn" alt="iamge"></p><ol><li>先获取需要采集信息的公司：<ol><li>从数据库中获取</li><li>获取字段：etid，etname</li><li>将获取的数据存储的状态表中</li><li>从状态表中获取数据，并更新状态表</li></ol></li><li>拼接初始URL：<ol><li>将etname和初始url进行拼接，获得初始网址</li><li>将初始url放到一个列表中，获取HTML的时候如何出错，将出错的url放到另一个列表中，进行循环获取</li></ol></li><li>请求解析初始一级页面：<ol><li>验证查询的公司是否正确（？？）</li><li>获取二级页面url</li><li>将二级url放到一个列表中，获取HTML的时候如何出错，将出错的url放到另一个列表中，进行循环获取</li></ol></li><li>请求解析二级页面：<ol><li>获取的信息待定</li></ol></li><li>将公司的信息存储到数据库中：<ol><li>建表</li><li>存储信息</li></ol></li></ol><h3 id="所建的表："><a href="#所建的表：" class="headerlink" title="所建的表："></a>所建的表：</h3><p><img src="http://hqx.oss-cn-beijing.aliyuncs.com/image/beautiful/pexels-photo-877695.jpeg" alt="iamge"></p><ol><li>企业主要信息：   et_host_info</li><li>工商信息：       et_busi_info</li><li>分支机构信息：   et_branch_office</li><li>软件著作权信息： et_container_copyright_info</li><li>网站备案信息：   et_conrainer_icp_info</li><li>对外投资信息：   et_foreign_investment_info</li><li>融资信息：       et_rongzi_info</li><li>股东信息：       et_stareholder_info</li><li>商标信息：       et_trademark_info</li><li>微信公众号信息：et_wechat_list_info</li><li>状态表：        et_name_status</li></ol><h3 id="看一下部分的结果图："><a href="#看一下部分的结果图：" class="headerlink" title="看一下部分的结果图："></a>看一下部分的结果图：</h3><p><img src="https://hqx.oss-cn-beijing.aliyuncs.com/image/20181206112018.jpg?x-oss-process=style/jixn" alt="iamge"><br><img src="https://hqx.oss-cn-beijing.aliyuncs.com/image/20181206112246.jpg?x-oss-process=style/jixn" alt="iamge"><br><img src="https://hqx.oss-cn-beijing.aliyuncs.com/image/20181206112322.jpg?x-oss-process=style/jixn" alt="iamge"><br><img src="https://hqx.oss-cn-beijing.aliyuncs.com/image/20181206112358.jpg?x-oss-process=style/jixn" alt="iamge"></p>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2018/12/16/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E7%88%AC%E8%99%AB%E2%80%94%E7%88%AC%E5%8F%96%E5%A4%A9%E7%9C%BC%E6%9F%A5%E7%BD%91%E7%AB%99%E7%9A%84%E4%BC%81%E4%B8%9A%E4%BF%A1%E6%81%AF/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>基于招聘站点和企业名称的email采集</title>
+      <link>http://yoursite.com/2018/10/09/%E5%9F%BA%E4%BA%8E%E6%8B%9B%E8%81%98%E7%AB%99%E7%82%B9%E5%92%8C%E4%BC%81%E4%B8%9A%E5%90%8D%E7%A7%B0%E7%9A%84email%E9%87%87%E9%9B%86/</link>
+      <guid>http://yoursite.com/2018/10/09/%E5%9F%BA%E4%BA%8E%E6%8B%9B%E8%81%98%E7%AB%99%E7%82%B9%E5%92%8C%E4%BC%81%E4%B8%9A%E5%90%8D%E7%A7%B0%E7%9A%84email%E9%87%87%E9%9B%86/</guid>
+      <pubDate>Tue, 09 Oct 2018 11:37:04 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;&lt;img src=&quot;http://pgbxm1xvg.bkt.clouddn.com/pexels-photo-1007027.jpeg&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;实习期间，公司安排了一个简单的任务，下面是任务要求：&lt;/p&gt;
+&lt;h3 id=&quot;任务要求：&quot;&gt;&lt;
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p><img src="http://pgbxm1xvg.bkt.clouddn.com/pexels-photo-1007027.jpeg" alt="image"></p><p>实习期间，公司安排了一个简单的任务，下面是任务要求：</p><h3 id="任务要求："><a href="#任务要求：" class="headerlink" title="任务要求："></a>任务要求：</h3><p><strong>基于招聘站点和企业名称的 email采集</strong></p><pre><code>1. 获取一批要采集email的企业2. 使用百度，在各大招聘站点内部搜索要采集的企业的招聘页面。3. 从招聘页面提取出企业的email（需要排除招聘站点官方、猎头相关的email）。4. 将采集的结果保存到数据库</code></pre><p><strong>代码已经上传到github上：</strong><br><a href="https://github.com/huquan1996/PythonSpider/tree/master/item1%EF%BC%9Aemail_caiji" target="_blank" rel="noopener">基于招聘站点和企业名称的 email采集</a></p><h3 id="看一下需要采集的企业"><a href="#看一下需要采集的企业" class="headerlink" title="看一下需要采集的企业"></a>看一下需要采集的企业</h3><p><img src="http://paxd6g86d.bkt.clouddn.com/bk/email.png" alt="image"></p><h3 id="爬取下来的结果图："><a href="#爬取下来的结果图：" class="headerlink" title="爬取下来的结果图："></a>爬取下来的结果图：</h3><p><img src="http://paxd6g86d.bkt.clouddn.com/bk/companys.png" alt="图"></p><p><strong>理一下大概的思路</strong></p><h3 id="基本思路："><a href="#基本思路：" class="headerlink" title="基本思路："></a>基本思路：</h3><ol><li>初始url分几钟：智联，猎聘，大街，前程无忧，中华英才网 这些都是需要进行单个站点的解析分别编写代码</li><li>连接数据库提取企业名称，插入url，进行get请求<ul><li>get_url_html 请求模块</li></ul></li><li>解析各个站点获取信息<ul><li>如何判断？？存在网页信息不对称</li></ul></li><li>信息进行正则匹配，匹配email<ul><li>get_emails 模块</li></ul></li><li>存到数据库</li></ol><p><img src="http://pgbxm1xvg.bkt.clouddn.com/pexels-photo-1484667.jpeg" alt="image"></p><h3 id="爬虫流程："><a href="#爬虫流程：" class="headerlink" title="爬虫流程："></a>爬虫流程：</h3><ol><li><p>检查是否有api</p><p> 无</p></li><li><p>切入源头</p><p> 百度内部搜索：在百度上输入   </p><pre><code>site:站点域名+搜索的信息</code></pre><p> eg：</p><p> <img src="http://paxd6g86d.bkt.clouddn.com/bk/2018-09-26_173418.png" alt="图"></p><p> 百度内部搜索多个站点<br> <a href="https://www.baidu.com/s?ie=utf-8&amp;f=3&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=93153557_hao_pg&amp;wd=site%EF%BC%9A51job.com%20%E9%98%BF%E9%87%8C" target="_blank" rel="noopener">https://www.baidu.com/s?ie=utf-8&amp;f=3&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=93153557_hao_pg&amp;wd=site%EF%BC%9A51job.com%20%E9%98%BF%E9%87%8C</a></p></li><li><p>爬取的范围</p><p> 爬取的是需要采集的企业的email</p></li><li><p>多层网络结构间跳转流程</p></li></ol><p><img src="http://paxd6g86d.bkt.clouddn.com/2018-09-26_173832.png" alt="图"></p><ol start="5"><li><p><strong>选择需要连接的数据库和表</strong></p><p> 连接的表et_ema的DDL信息：</p><pre><code>CREATE TABLE `et_ema` (  `id` int(12) NOT NULL AUTO_INCREMENT COMMENT &apos;ID&apos;,  `etid` int(11) NOT NULL COMMENT &apos;序号&apos;,  `email` varchar(50) NOT NULL DEFAULT &apos;&apos; COMMENT &apos;公司email&apos;,  PRIMARY KEY (`id`),  UNIQUE KEY `etid,email` (`etid`,`email`)) ENGINE=InnoDB AUTO_INCREMENT=1776 DEFAULT CHARSET=gbk ROW_FORMAT=DYNAMIC COMMENT=&apos;公司email&apos;</code></pre></li></ol><ol start="6"><li><p><strong>确定爬取的字段和连接关系</strong></p><p> 公司</p><p> email</p></li></ol><h2 id="数据采集"><a href="#数据采集" class="headerlink" title="数据采集"></a>数据采集</h2><ul><li><p><strong>常用模块</strong></p><p>  request</p></li><li><p><strong>解析工具</strong></p><p>  xpath</p></li><li><p><strong>数据存储</strong></p><p>  mysql</p></li><li><p><strong>爬虫效率提升问题</strong></p><p>  简单使用多协程</p></li></ul><h3 id="代码大纲："><a href="#代码大纲：" class="headerlink" title="代码大纲："></a>代码大纲：</h3><p><strong>main函数：</strong></p><pre><code>1. 连接数据库    输入：无    输出：conn，cursor2. 获取公司信息：etid，etname    输入：cursor    输出：companys3. 站点代码：获取网页信息，1，2，3    输入：url    输出：text4. 正则email，并去重    输入：text    输出：emails5. 存入数据库：一次存入一条信息    输入：conn, companys_email, table_name    输出：无6. 关闭数据库    输入：conn，cursor    输出：无</code></pre><p><img src="http://pgbxm1xvg.bkt.clouddn.com/pexels-photo-1483936.jpeg" alt="image"></p><h2 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h2><p><strong>正则匹配的问题</strong>：</p><pre><code>1. 不匹配括号里的内容的方法：使用 ？：2. [...]可以匹配【】中的任意字符，如[abc]即匹配a,b,c的任意一个字符3. findall匹配后不能使用group</code></pre><p><strong>字典和文件格式转换：</strong></p><pre><code>1.json.dumps    将 Python 对象编码成 JSON 字符串2.json.loads    将已编码的 JSON 字符串解码为 Python 对象3. 读取txt文件里的字典(打开，read，load，关闭)    file = open(&apos;text.txt&apos;, &apos;r&apos;)    js = file.read()    dic = json.loads(js)    print (dic)    file.close()4. 字典写入txt：    dic = {          &apos;andy&apos;:{              &apos;age&apos;: 23,              &apos;city&apos;: &apos;beijing&apos;,              &apos;skill&apos;: &apos;python&apos;          },          &apos;william&apos;: {              &apos;age&apos;: 25,              &apos;city&apos;: &apos;shanghai&apos;,              &apos;skill&apos;: &apos;js&apos;          }      }      js = json.dumps(dic)       file = open(&apos;test.txt&apos;, &apos;w&apos;)      file.write(js)      file.close()  </code></pre><p><strong>screen的用法：</strong></p><pre><code>screen：可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换，可以后台运行爬虫后台运行爬虫的步骤：1. 直接运行爬虫    screen python run.py2. 退出保存窗口    ctrl+a+d 3. 查看打开的screen（意思的‘屏幕’）    screen -ls4. 重新打开关闭的screen    screen -r 50126</code></pre><p><strong>xpath匹配问题：</strong></p><pre><code>一属性多值：[contains(@class, &quot;li&quot;)]</code></pre><p><strong>对于如何将edid对应：</strong></p><pre><code>获取的时候同时将etid和etname从数据库中拿出来，之后存储的时候再一起存进去</code></pre><p><strong>如何去除list中重复的元素：</strong></p><pre><code>使用内置的set函数：    i = [&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;b&apos;,&apos;c&apos;,&apos;a&apos;,&apos;a&apos;]    z = list(set(i))    print z</code></pre><p><strong>在数据库中建立表：</strong></p><pre><code>CREATE TABLE IF NOT EXISTS `et_email` (    `id` INT(12) NOT NULL AUTO_INCREMENT COMMENT &apos;ID&apos;,    `etid` INT(11) NOT NULL COMMENT &apos;序号&apos;,    `email` VARCHAR(30) NOT NULL DEFAULT &apos;&apos; COMMENT &apos;公司email&apos;,    PRIMARY KEY (`id`),`et_email`    KEY (`etid`)) ENGINE=INNODB DEFAULT CHARSET=gbk ROW_FORMAT=DYNAMIC COMMENT=&apos;公司email&apos;</code></pre><p><strong>多协程的问题：</strong></p><pre><code>gevent.pool不能进行多参数的传递，可以使用from functools import partial来进行多参数的传递使用方法：      def run (a,b):        pass    partial.work = partial(run, a)    gevent.pool.map(partial.work,b)(注意：partial不能有迭代的参数map函数是需要是以迭代的方式来对b进行数据的提取，以后以参数的形式调用如果有多个需要迭代的参数，可以使用z = zip（a，b）)</code></pre>]]></content:encoded>
+      
+      <comments>http://yoursite.com/2018/10/09/%E5%9F%BA%E4%BA%8E%E6%8B%9B%E8%81%98%E7%AB%99%E7%82%B9%E5%92%8C%E4%BC%81%E4%B8%9A%E5%90%8D%E7%A7%B0%E7%9A%84email%E9%87%87%E9%9B%86/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
